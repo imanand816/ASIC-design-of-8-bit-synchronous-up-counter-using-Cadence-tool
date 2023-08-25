@@ -1,0 +1,3068 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.10-p004_1, built Tue May 18 11:58:29 PDT 2021
+Options:	
+Date:		Fri Aug 18 22:21:30 2023
+Host:		vlsicadclient13 (x86_64 w/Linux 3.10.0-957.el7.x86_64) (8cores*8cpus*Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz 12288KB)
+OS:		Red Hat Enterprise Linux Workstation release 7.6 (Maipo)
+
+License:
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (15 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+[INFO] Loading PVS 21.12 fill procedures
+<CMD> win
+<CMD> save_global counter_final.globals
+<CMD> set init_gnd_net VSS
+<CMD> set init_lef_file {../lef/gsclib045_tech.lef ../lef/gsclib045_macro.lef}
+<CMD> set init_design_settop 0
+<CMD> set init_verilog ../synthesis/reports/new_results/hdl_synthesis.v
+<CMD> set init_mmmc_file counter_final.view
+<CMD> set init_pwr_net VDD
+<CMD> init_design
+#% Begin Load MMMC data ... (date=08/18 22:47:22, mem=661.9M)
+#% End Load MMMC data ... (date=08/18 22:47:22, total cpu=0:00:00.0, real=0:00:00.0, peak res=662.2M, current mem=662.2M)
+rc_corner
+
+Loading LEF file ../lef/gsclib045_tech.lef ...
+
+Loading LEF file ../lef/gsclib045_macro.lef ...
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+viaInitial starts at Fri Aug 18 22:47:23 2023
+viaInitial ends at Fri Aug 18 22:47:23 2023
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from counter_final.view
+Reading slow timing library '/home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/lib/slow_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/lib/slow_vdd1v0_basicCells.lib)
+Read 480 cells in library 'slow_vdd1v0' 
+Reading fast timing library '/home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/lib/fast_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/lib/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library 'fast_vdd1v0' 
+*** End library_loading (cpu=0.01min, real=0.00min, mem=14.9M, fe_cpu=7.51min, fe_real=25.88min, fe_mem=841.6M) ***
+#% Begin Load netlist data ... (date=08/18 22:47:23, mem=681.0M)
+*** Begin netlist parsing (mem=841.6M) ***
+Created 480 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../synthesis/reports/new_results/hdl_synthesis.v'
+
+*** Memory Usage v#1 (Current mem = 841.645M, initial mem = 308.848M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=841.6M) ***
+#% End Load netlist data ... (date=08/18 22:47:23, total cpu=0:00:00.0, real=0:00:00.0, peak res=690.8M, current mem=690.8M)
+Top level cell is counter.
+Hooked 960 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell counter ...
+*** Netlist is unique.
+** info: there are 1055 modules.
+** info: there are 23 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 898.070M, initial mem = 308.848M) ***
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+Cap table was created using Encounter 10.10-b056_1.
+Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+Set Shrink Factor to 0.90000
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup
+    RC-Corner Name        : rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner Technology file: '../QRC_Tech/gpdk045.tch'
+ 
+ Analysis View: hold
+    RC-Corner Name        : rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner Technology file: '../QRC_Tech/gpdk045.tch'
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '../synthesis/reports/new_results/counter_sdc.sdc' ...
+Current (total cpu=0:07:31, real=0:25:54, peak res=975.3M, current mem=975.3M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../synthesis/reports/new_results/counter_sdc.sdc, Line 9).
+
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../synthesis/reports/new_results/counter_sdc.sdc, Line 10).
+
+counter
+INFO (CTE): Reading of timing constraints file ../synthesis/reports/new_results/counter_sdc.sdc completed, with 2 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=998.0M, current mem=998.0M)
+Current (total cpu=0:07:31, real=0:25:54, peak res=998.0M, current mem=998.0M)
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+WARNING   TCLCMD-1461          2  Skipped unsupported command: %s          
+WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+*** Message Summary: 8 warning(s), 0 error(s)
+
+<CMD> getIoFlowFlag
+<CMD> setIoFlowFlag 0
+<CMD> floorPlan -site CoreSite -r 0.992743105951 0.699887 5 5 5 5
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+<CMD> uiSetTool select
+<CMD> getIoFlowFlag
+<CMD> fit
+<CMD> setIoFlowFlag 0
+<CMD> floorPlan -site CoreSite -r 0.986538461538 0.695513 5.0 5.13 5.0 5.13
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+<CMD> uiSetTool select
+<CMD> getIoFlowFlag
+<CMD> fit
+<CMD> clearGlobalNets
+<CMD> globalNetConnect VDD -type pgpin -pin VDD -instanceBasename * -hierarchicalInstance {}
+<CMD> globalNetConnect VSS -type pgpin -pin VSS -instanceBasename * -hierarchicalInstance {}
+<CMD> globalNetConnect VDD -type tiehi -instanceBasename * -hierarchicalInstance {}
+<CMD> globalNetConnect VSS -type tielo -instanceBasename * -hierarchicalInstance {}
+<CMD> clearGlobalNets
+<CMD> globalNetConnect VDD -type pgpin -pin VDD -instanceBasename * -hierarchicalInstance {}
+<CMD> globalNetConnect VSS -type pgpin -pin VSS -instanceBasename * -hierarchicalInstance {}
+<CMD> globalNetConnect VDD -type tiehi -instanceBasename * -hierarchicalInstance {}
+<CMD> globalNetConnect VSS -type tielo -instanceBasename * -hierarchicalInstance {}
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer Metal11 -stacked_via_bottom_layer Metal1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+<CMD> addRing -nets {VDD VSS} -type core_rings -follow core -layer {top Metal11 bottom Metal11 left Metal10 right Metal10} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 0.45 bottom 0.45 left 0.45 right 0.45} -offset {top 0.5 bottom 0.5 left 0.5 right 0.5} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1265.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+| Metal10|        4       |       NA       |
+|  Via10 |        8       |        0       |
+| Metal11|        4       |       NA       |
++--------+----------------+----------------+
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer Metal11 -stacked_via_bottom_layer Metal1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+<CMD> addRing -nets {VDD VSS} -type core_rings -follow core -layer {top Metal11 bottom Metal11 left Metal10 right Metal10} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 0.45 bottom 0.45 left 0.45 right 0.45} -offset {top 0.5 bottom 0.5 left 0.5 right 0.5} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1265.0M)
+Ring generation is complete.
+<CMD> saveDesign counter_powerring
+#% Begin save design ... (date=08/18 23:07:05, mem=1069.8M)
+% Begin Save ccopt configuration ... (date=08/18 23:07:05, mem=1069.8M)
+% End Save ccopt configuration ... (date=08/18 23:07:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=1070.6M, current mem=1070.6M)
+% Begin Save netlist data ... (date=08/18 23:07:05, mem=1070.7M)
+Writing Binary DB to counter_powerring.dat/counter.v.bin in single-threaded mode...
+% End Save netlist data ... (date=08/18 23:07:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=1070.7M, current mem=1070.7M)
+Saving symbol-table file ...
+Saving congestion map file counter_powerring.dat/counter.route.congmap.gz ...
+% Begin Save AAE data ... (date=08/18 23:07:05, mem=1071.4M)
+Saving AAE Data ...
+% End Save AAE data ... (date=08/18 23:07:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=1071.4M, current mem=1071.4M)
+Saving preference file counter_powerring.dat/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+% Begin Save floorplan data ... (date=08/18 23:07:06, mem=1074.3M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=08/18 23:07:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=1074.4M, current mem=1074.4M)
+Saving PG file counter_powerring.dat/counter.pg.gz, version#2, (Created by Innovus v21.10-p004_1 on Fri Aug 18 23:07:06 2023)
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=1268.6M) ***
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+% Begin Save placement data ... (date=08/18 23:07:06, mem=1074.4M)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+% End Save placement data ... (date=08/18 23:07:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=1074.5M, current mem=1074.5M)
+% Begin Save routing data ... (date=08/18 23:07:06, mem=1074.5M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1268.6M) ***
+% End Save routing data ... (date=08/18 23:07:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=1074.7M, current mem=1074.7M)
+Saving property file counter_powerring.dat/counter.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1271.6M) ***
+% Begin Save power constraints data ... (date=08/18 23:07:06, mem=1075.3M)
+% End Save power constraints data ... (date=08/18 23:07:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=1075.4M, current mem=1075.4M)
+rc_corner
+rc_corner
+rc_corner
+Generated self-contained design counter_powerring.dat
+#% End save design ... (date=08/18 23:07:07, total cpu=0:00:00.4, real=0:00:02.0, peak res=1105.1M, current mem=1078.9M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+<CMD> saveDesign counter_powerring
+#% Begin save design ... (date=08/18 23:07:38, mem=1079.0M)
+% Begin Save ccopt configuration ... (date=08/18 23:07:38, mem=1079.0M)
+% End Save ccopt configuration ... (date=08/18 23:07:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=1079.0M, current mem=1079.0M)
+% Begin Save netlist data ... (date=08/18 23:07:38, mem=1079.0M)
+Writing Binary DB to counter_powerring.dat.tmp/counter.v.bin in single-threaded mode...
+% End Save netlist data ... (date=08/18 23:07:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=1079.0M, current mem=1079.0M)
+Saving symbol-table file ...
+Saving congestion map file counter_powerring.dat.tmp/counter.route.congmap.gz ...
+% Begin Save AAE data ... (date=08/18 23:07:39, mem=1079.0M)
+Saving AAE Data ...
+% End Save AAE data ... (date=08/18 23:07:39, total cpu=0:00:00.0, real=0:00:00.0, peak res=1079.0M, current mem=1079.0M)
+Saving preference file counter_powerring.dat.tmp/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+% Begin Save floorplan data ... (date=08/18 23:07:39, mem=1079.1M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=08/18 23:07:39, total cpu=0:00:00.0, real=0:00:00.0, peak res=1079.1M, current mem=1079.1M)
+Saving PG file counter_powerring.dat.tmp/counter.pg.gz, version#2, (Created by Innovus v21.10-p004_1 on Fri Aug 18 23:07:39 2023)
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=1305.4M) ***
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+% Begin Save placement data ... (date=08/18 23:07:39, mem=1079.1M)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+% End Save placement data ... (date=08/18 23:07:39, total cpu=0:00:00.0, real=0:00:00.0, peak res=1079.1M, current mem=1079.1M)
+% Begin Save routing data ... (date=08/18 23:07:39, mem=1079.1M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1305.4M) ***
+% End Save routing data ... (date=08/18 23:07:39, total cpu=0:00:00.0, real=0:00:00.0, peak res=1079.1M, current mem=1079.1M)
+Saving property file counter_powerring.dat.tmp/counter.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1308.4M) ***
+% Begin Save power constraints data ... (date=08/18 23:07:39, mem=1079.1M)
+% End Save power constraints data ... (date=08/18 23:07:39, total cpu=0:00:00.0, real=0:00:00.0, peak res=1079.1M, current mem=1079.1M)
+rc_corner
+rc_corner
+rc_corner
+Generated self-contained design counter_powerring.dat.tmp
+#% End save design ... (date=08/18 23:07:39, total cpu=0:00:00.4, real=0:00:01.0, peak res=1109.9M, current mem=1079.5M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+<CMD> setSrouteMode -viaConnectToShape { noshape }
+<CMD> sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { Metal1(1) Metal11(11) } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { Metal1(1) Metal11(11) } -nets { VDD VSS } -allowLayerChange 1 -blockPin useLef -targetViaLayerRange { Metal1(1) Metal11(11) }
+*** Begin SPECIAL ROUTE on Fri Aug 18 23:12:26 2023 ***
+SPECIAL ROUTE ran on directory: /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design
+SPECIAL ROUTE ran on machine: vlsicadclient13 (Linux 3.10.0-957.el7.x86_64 x86_64 3.89Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 1
+srouteBottomTargetLayerLimit set to 1
+srouteConnectConverterPin set to false
+srouteCrossoverViaBottomLayer set to 1
+srouteCrossoverViaTopLayer set to 11
+srouteFloatingStripeTarget set to "blockring padring ring stripe ringpin blockpin followpin"
+srouteFollowCorePinEnd set to 3
+srouteJogControl set to "preferWithChanges differentLayer"
+srouteNoViaOnWireShape set to "padring ring stripe blockring blockpin coverpin blockwire corewire followpin iowire"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 11
+srouteTopTargetLayerLimit set to 11
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2632.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+**WARN: (IMPSR-4302):	Cap-table/qrcTechFile is found in the design, so the same information from the technology file will be ignored.
+Read in 24 layers, 11 routing layers, 1 overlap layer
+Read in 2 nondefault rules, 0 used
+Read in 574 macros, 10 used
+Read in 10 components
+  10 core components: 10 unplaced, 0 placed, 0 fixed
+Read in 10 logical pins
+Read in 10 nets
+Read in 2 special nets, 2 routed
+Read in 20 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-1254):	Unable to connect the specified objects, since block pins of the VDD net were not found in the design. Check netlist or change the parameter value to include block pins in the design.
+**WARN: (IMPSR-1256):	Unable to find any CORE class pad pin of the VDD net due to unavailability of the pin or check netlist in the routing area or layer. Change routing area or layer to include the expected pin or check netlist. Alternatively, change port class in the technology file.
+Type 'man IMPSR-1256' for more detail.
+Cannot find any AREAIO class pad pin of net VDD. Check net list, or change port class in the technology file, or change option to include pin in given range.
+**WARN: (IMPSR-1254):	Unable to connect the specified objects, since block pins of the VSS net were not found in the design. Check netlist or change the parameter value to include block pins in the design.
+**WARN: (IMPSR-1256):	Unable to find any CORE class pad pin of the VSS net due to unavailability of the pin or check netlist in the routing area or layer. Change routing area or layer to include the expected pin or check netlist. Alternatively, change port class in the technology file.
+Type 'man IMPSR-1256' for more detail.
+Cannot find any AREAIO class pad pin of net VSS. Check net list, or change port class in the technology file, or change option to include pin in given range.
+CPU time for VDD FollowPin 0 seconds
+CPU time for VSS FollowPin 0 seconds
+  Number of IO ports routed: 0
+  Number of Block ports routed: 0
+  Number of Stripe ports routed: 0
+  Number of Core ports routed: 12
+  Number of Pad ports routed: 0
+  Number of Power Bump ports routed: 0
+  Number of Followpin connections: 6
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2663.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 0 via definition ...Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+
+sroute created 18 wires.
+ViaGen created 108 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+| Metal1 |       18       |       NA       |
+|  Via1  |       12       |        0       |
+|  Via2  |       12       |        0       |
+|  Via3  |       12       |        0       |
+|  Via4  |       12       |        0       |
+|  Via5  |       12       |        0       |
+|  Via6  |       12       |        0       |
+|  Via7  |       12       |        0       |
+|  Via8  |       12       |        0       |
+|  Via9  |       12       |        0       |
++--------+----------------+----------------+
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> setAddStripeMode -ignore_block_check false -break_at none -route_over_rows_only false -rows_without_stripes_only false -extend_to_closest_target none -stop_at_last_wire_for_area false -partial_set_thru_domain false -ignore_nondefault_domains false -trim_antenna_back_to_shape none -spacing_type edge_to_edge -spacing_from_block 0 -stripe_min_length stripe_width -stacked_via_top_layer Metal11 -stacked_via_bottom_layer Metal1 -via_using_exact_crossover_size false -split_vias false -orthogonal_only true -allow_jog { padcore_ring  block_ring } -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape   }
+addStripe will allow jog to connect padcore ring and block ring.
+
+Stripes will stop at the boundary of the specified area.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not extend to closest target.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Stripes will not be created over regions without power planning wires.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+addStripe will break automatically at non-default domains when generating global stripes over the core area or default domain.
+Offset for stripe breaking is set to 0.
+<CMD> addStripe -nets {VDD VSS} -layer Metal10 -direction vertical -width 1.8 -spacing 0.45 -number_of_sets 2 -start_from left -start_offset 1 -stop_offset 1 -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit Metal11 -padcore_ring_bottom_layer_limit Metal1 -block_ring_top_layer_limit Metal11 -block_ring_bottom_layer_limit Metal1 -use_wire_group 0 -snap_wire_center_to_grid None
+
+Initialize fgc environment(mem: 1354.9M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1354.9M)
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1354.9M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1354.9M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1354.9M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+Stripe generation is complete.
+vias are now being generated.
+addStripe created 4 wires.
+ViaGen created 116 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  Via1  |       12       |        0       |
+|  Via2  |       12       |        0       |
+|  Via3  |       12       |        0       |
+|  Via4  |       12       |        0       |
+|  Via5  |       12       |        0       |
+|  Via6  |       12       |        0       |
+|  Via7  |       12       |        0       |
+|  Via8  |       12       |        0       |
+|  Via9  |       12       |        0       |
+| Metal10|        4       |       NA       |
+|  Via10 |        8       |        0       |
++--------+----------------+----------------+
+<CMD> setAddStripeMode -ignore_block_check false -break_at none -route_over_rows_only false -rows_without_stripes_only false -extend_to_closest_target none -stop_at_last_wire_for_area false -partial_set_thru_domain false -ignore_nondefault_domains false -trim_antenna_back_to_shape none -spacing_type edge_to_edge -spacing_from_block 0 -stripe_min_length stripe_width -stacked_via_top_layer Metal11 -stacked_via_bottom_layer Metal1 -via_using_exact_crossover_size false -split_vias false -orthogonal_only true -allow_jog { padcore_ring  block_ring } -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape   }
+addStripe will allow jog to connect padcore ring and block ring.
+
+Stripes will stop at the boundary of the specified area.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not extend to closest target.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Stripes will not be created over regions without power planning wires.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+addStripe will break automatically at non-default domains when generating global stripes over the core area or default domain.
+Offset for stripe breaking is set to 0.
+<CMD> addStripe -nets {VDD VSS} -layer Metal10 -direction vertical -width 1.8 -spacing 0.45 -number_of_sets 2 -start_from left -start_offset 1 -stop_offset 1 -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit Metal11 -padcore_ring_bottom_layer_limit Metal1 -block_ring_top_layer_limit Metal11 -block_ring_bottom_layer_limit Metal1 -use_wire_group 0 -snap_wire_center_to_grid None
+
+Initialize fgc environment(mem: 1354.9M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1354.9M)
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1354.9M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1354.9M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1354.9M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (6.900000, 2.830000) (6.900000, 15.980000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (13.450000, 2.830000) (13.450000, 15.980000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (9.150000, 0.580000) (9.150000, 18.230000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (15.700000, 0.580000) (15.700000, 18.230000) because same wire already exists.
+Stripe generation is complete.
+<CMD> saveDesign counter_powerstripes
+#% Begin save design ... (date=08/18 23:17:52, mem=1111.0M)
+% Begin Save ccopt configuration ... (date=08/18 23:17:52, mem=1111.0M)
+% End Save ccopt configuration ... (date=08/18 23:17:52, total cpu=0:00:00.0, real=0:00:00.0, peak res=1111.2M, current mem=1111.2M)
+% Begin Save netlist data ... (date=08/18 23:17:52, mem=1111.2M)
+Writing Binary DB to counter_powerstripes.dat/counter.v.bin in single-threaded mode...
+% End Save netlist data ... (date=08/18 23:17:52, total cpu=0:00:00.0, real=0:00:00.0, peak res=1111.2M, current mem=1111.2M)
+Saving symbol-table file ...
+Saving congestion map file counter_powerstripes.dat/counter.route.congmap.gz ...
+% Begin Save AAE data ... (date=08/18 23:17:52, mem=1111.3M)
+Saving AAE Data ...
+% End Save AAE data ... (date=08/18 23:17:52, total cpu=0:00:00.0, real=0:00:00.0, peak res=1111.3M, current mem=1111.3M)
+Saving preference file counter_powerstripes.dat/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+% Begin Save floorplan data ... (date=08/18 23:17:52, mem=1111.6M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=08/18 23:17:52, total cpu=0:00:00.0, real=0:00:01.0, peak res=1111.6M, current mem=1111.6M)
+Saving PG file counter_powerstripes.dat/counter.pg.gz, version#2, (Created by Innovus v21.10-p004_1 on Fri Aug 18 23:17:53 2023)
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=1352.4M) ***
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+% Begin Save placement data ... (date=08/18 23:17:53, mem=1111.6M)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+% End Save placement data ... (date=08/18 23:17:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=1111.6M, current mem=1111.6M)
+% Begin Save routing data ... (date=08/18 23:17:53, mem=1111.6M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1352.4M) ***
+% End Save routing data ... (date=08/18 23:17:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=1111.6M, current mem=1111.6M)
+Saving property file counter_powerstripes.dat/counter.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1355.4M) ***
+% Begin Save power constraints data ... (date=08/18 23:17:53, mem=1111.6M)
+% End Save power constraints data ... (date=08/18 23:17:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=1111.6M, current mem=1111.6M)
+rc_corner
+rc_corner
+rc_corner
+Generated self-contained design counter_powerstripes.dat
+#% End save design ... (date=08/18 23:17:53, total cpu=0:00:00.4, real=0:00:01.0, peak res=1142.3M, current mem=1110.4M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+<CMD> saveDesign counter_powerstripes
+#% Begin save design ... (date=08/18 23:17:59, mem=1110.4M)
+% Begin Save ccopt configuration ... (date=08/18 23:17:59, mem=1110.4M)
+% End Save ccopt configuration ... (date=08/18 23:17:59, total cpu=0:00:00.0, real=0:00:00.0, peak res=1110.4M, current mem=1110.4M)
+% Begin Save netlist data ... (date=08/18 23:17:59, mem=1110.4M)
+Writing Binary DB to counter_powerstripes.dat.tmp/counter.v.bin in single-threaded mode...
+% End Save netlist data ... (date=08/18 23:17:59, total cpu=0:00:00.0, real=0:00:00.0, peak res=1110.4M, current mem=1110.4M)
+Saving symbol-table file ...
+Saving congestion map file counter_powerstripes.dat.tmp/counter.route.congmap.gz ...
+% Begin Save AAE data ... (date=08/18 23:17:59, mem=1110.4M)
+Saving AAE Data ...
+% End Save AAE data ... (date=08/18 23:17:59, total cpu=0:00:00.0, real=0:00:00.0, peak res=1110.4M, current mem=1110.4M)
+Saving preference file counter_powerstripes.dat.tmp/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+% Begin Save floorplan data ... (date=08/18 23:17:59, mem=1110.4M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=08/18 23:17:59, total cpu=0:00:00.0, real=0:00:00.0, peak res=1110.4M, current mem=1110.4M)
+Saving PG file counter_powerstripes.dat.tmp/counter.pg.gz, version#2, (Created by Innovus v21.10-p004_1 on Fri Aug 18 23:17:59 2023)
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:01.0 mem=1357.0M) ***
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+% Begin Save placement data ... (date=08/18 23:18:00, mem=1110.4M)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+% End Save placement data ... (date=08/18 23:18:00, total cpu=0:00:00.0, real=0:00:00.0, peak res=1110.4M, current mem=1110.4M)
+% Begin Save routing data ... (date=08/18 23:18:00, mem=1110.4M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1357.0M) ***
+% End Save routing data ... (date=08/18 23:18:00, total cpu=0:00:00.0, real=0:00:00.0, peak res=1110.4M, current mem=1110.4M)
+Saving property file counter_powerstripes.dat.tmp/counter.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1360.0M) ***
+% Begin Save power constraints data ... (date=08/18 23:18:00, mem=1110.4M)
+% End Save power constraints data ... (date=08/18 23:18:00, total cpu=0:00:00.0, real=0:00:00.0, peak res=1110.4M, current mem=1110.4M)
+rc_corner
+rc_corner
+rc_corner
+Generated self-contained design counter_powerstripes.dat.tmp
+#% End save design ... (date=08/18 23:18:00, total cpu=0:00:00.4, real=0:00:01.0, peak res=1110.5M, current mem=1110.5M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+<CMD> getMultiCpuUsage -localCpu
+<CMD> get_verify_drc_mode -disable_rules -quiet
+<CMD> get_verify_drc_mode -quiet -area
+<CMD> get_verify_drc_mode -quiet -layer_range
+<CMD> get_verify_drc_mode -check_ndr_spacing -quiet
+<CMD> get_verify_drc_mode -check_only -quiet
+<CMD> get_verify_drc_mode -check_same_via_cell -quiet
+<CMD> get_verify_drc_mode -exclude_pg_net -quiet
+<CMD> get_verify_drc_mode -ignore_trial_route -quiet
+<CMD> get_verify_drc_mode -max_wrong_way_halo -quiet
+<CMD> get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+<CMD> get_verify_drc_mode -limit -quiet
+<CMD> set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report counter.drc.rpt -limit 1000
+<CMD> verify_drc
+#-check_ndr_spacing auto                 # enums={true false auto}, default=auto,  user setting
+#-check_same_via_cell true               # bool, default=false, user setting
+#-report counter.drc.rpt                 # string, default="", user setting
+ *** Starting Verify DRC (MEM: 1358.7) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+
+  Verification Complete : 0 Viols.
+
+ *** End Verify DRC (CPU: 0:00:00.0  ELAPSED TIME: 0.00  MEM: 0.0M) ***
+
+<CMD> set_verify_drc_mode -area {0 0 0 0}
+<CMD> verifyConnectivity -type all -error 1000 -warning 50
+VERIFY_CONNECTIVITY use new engine.
+
+******** Start: VERIFY CONNECTIVITY ********
+Start Time: Fri Aug 18 23:19:25 2023
+
+Design Name: counter
+Database Units: 2000
+Design Boundary: (0.0000, 0.0000) (22.6000, 18.8100)
+Error Limit = 1000; Warning Limit = 50
+Check all nets
+**WARN: (IMPVFC-97):	IO pin clk of net clk has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[0] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[1] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[2] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[4] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[3] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[7] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[5] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[6] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin rst of net rst has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[0] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[1] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[2] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[4] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[3] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[7] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[5] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[6] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin count[7] of net count[7] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin A of net count[7] has not been placed. Please make sure instance g269__6260 is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin Q of net count[7] has not been placed. Please make sure instance count_reg[7] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin count[6] of net count[6] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin A of net count[6] has not been placed. Please make sure instance g273__3680 is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin A of net count[6] has not been placed. Please make sure instance g260__2398 is placed and rerun verifyConnectivity.
+**WARN: (EMS-27):	Message (IMPVFC-96) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**WARN: (IMPVFC-97):	IO pin count[5] of net count[5] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin count[4] of net count[4] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin count[3] of net count[3] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin count[2] of net count[2] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin count[1] of net count[1] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+**WARN: (IMPVFC-97):	IO pin count[0] of net count[0] has not been assigned. Please make sure it is assigned and rerun verifyConnectivity.
+
+Begin Summary 
+  Found no problems or warnings.
+End Summary
+
+End Time: Fri Aug 18 23:19:25 2023
+Time Elapsed: 0:00:00.0
+
+******** End: VERIFY CONNECTIVITY ********
+  Verification Complete : 0 Viols.  0 Wrngs.
+  (CPU Time: 0:00:00.0  MEM: 0.000M)
+
+<CMD> ::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+<CMD> ::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+<CMD> uiSetTool select
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -fixOverlap 1 -side Left -layer 1 -assign 0.072 4.651 -pin clk
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1361.1M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -pinWidth 0.06 -pinDepth 0.335 -fixOverlap 1 -side Left -layer 1 -assign 0.0 4.655 -pin clk
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1358.1M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -pinWidth 0.06 -pinDepth 0.335 -fixOverlap 1 -side Left -layer 1 -assign 0.0 4.655 -pin clk
+editPin : finished (cpu = 0:00:00.0 real = 0:00:01.0, mem = 1358.8M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -pinWidth 0.06 -pinDepth 0.335 -fixOverlap 1 -side Left -layer 1 -assign 0.0 4.655 -pin clk
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1358.5M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> ::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+<CMD> uiSetTool select
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -pinWidth 0.06 -pinDepth 0.335 -fixOverlap 1 -side Left -layer 1 -assign 0.072 9.2855 -pin clk
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1359.2M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> ::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+<CMD> uiSetTool select
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -fixOverlap 1 -side Left -layer 1 -assign 0.072 5.0095 -pin rst
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1359.9M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> ::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+<CMD> ::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+<CMD> uiSetTool select
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Top -layer 1 -spreadType start -spacing 2 -start 2.9125 18.764 -pin {{count[0]} {count[1]} {count[2]} {count[3]} {count[4]} {count[5]} {count[6]} {count[7]}}
+Successfully spread [8] pins.
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1359.6M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -pinWidth 0.06 -pinDepth 0.335 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Top -layer 1 -spreadType start -spacing 2.2 -start 3.1 18.81 -pin {{count[0]} {count[1]} {count[2]} {count[3]} {count[4]} {count[5]} {count[6]} {count[7]}}
+Successfully spread [8] pins.
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1359.3M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> get_verify_drc_mode -disable_rules -quiet
+<CMD> get_verify_drc_mode -quiet -area
+<CMD> get_verify_drc_mode -quiet -layer_range
+<CMD> get_verify_drc_mode -check_ndr_spacing -quiet
+<CMD> get_verify_drc_mode -check_only -quiet
+<CMD> get_verify_drc_mode -check_same_via_cell -quiet
+<CMD> get_verify_drc_mode -exclude_pg_net -quiet
+<CMD> get_verify_drc_mode -ignore_trial_route -quiet
+<CMD> get_verify_drc_mode -max_wrong_way_halo -quiet
+<CMD> get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+<CMD> get_verify_drc_mode -limit -quiet
+<CMD> set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report counter.drc.rpt -limit 1000
+<CMD> verify_drc
+#-check_ndr_spacing auto                 # enums={true false auto}, default=auto,  user setting
+#-check_same_via_cell true               # bool, default=false, user setting
+#-report counter.drc.rpt                 # string, default="", user setting
+ *** Starting Verify DRC (MEM: 1364.0) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+
+  Verification Complete : 0 Viols.
+
+ *** End Verify DRC (CPU: 0:00:00.0  ELAPSED TIME: 0.00  MEM: 1.0M) ***
+
+<CMD> set_verify_drc_mode -area {0 0 0 0}
+<CMD> verifyConnectivity -type all -error 1000 -warning 50
+VERIFY_CONNECTIVITY use new engine.
+
+******** Start: VERIFY CONNECTIVITY ********
+Start Time: Sat Aug 19 02:50:36 2023
+
+Design Name: counter
+Database Units: 2000
+Design Boundary: (0.0000, 0.0000) (22.6000, 18.8100)
+Error Limit = 1000; Warning Limit = 50
+Check all nets
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[0] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[1] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[2] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[4] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[3] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[7] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[5] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[6] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[0] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[1] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[2] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[4] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[3] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[7] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[5] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[6] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin A of net count[7] has not been placed. Please make sure instance g269__6260 is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin Q of net count[7] has not been placed. Please make sure instance count_reg[7] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin A of net count[6] has not been placed. Please make sure instance g273__3680 is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin A of net count[6] has not been placed. Please make sure instance g260__2398 is placed and rerun verifyConnectivity.
+**WARN: (EMS-27):	Message (IMPVFC-96) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+
+Begin Summary 
+  Found no problems or warnings.
+End Summary
+
+End Time: Sat Aug 19 02:50:36 2023
+Time Elapsed: 0:00:00.0
+
+******** End: VERIFY CONNECTIVITY ********
+  Verification Complete : 0 Viols.  0 Wrngs.
+  (CPU Time: 0:00:00.0  MEM: 0.000M)
+
+<CMD> uiSetTool obstruct
+<CMD> createPlaceBlockage -box 10.32800 12.15600 11.28450 13.35200 -type hard
+<CMD> uiSetTool obstruct
+<CMD> dbSet [uiGetRecordObjByInfo -objType pBlkg -rect 10.2 11.97 11.4 13.68 -name defScreenName].type Soft
+<CMD> dbSet [uiGetRecordObjByInfo -objType pBlkg -rect 10.2 11.97 11.4 13.68 -name defScreenName].density 50
+<CMD> dbSet [uiGetRecordObjByInfo -objType pBlkg -rect 10.2 11.97 11.4 13.68 -name defScreenName].isNoFlop 0
+<CMD> uiSetTool obstruct
+<CMD> ::dehighlight row:counter/CORE_ROW_2
+<CMD> deleteFPObject LayerShape (20400,23940,22800,27360)
+<CMD> uiSetTool obstruct
+<CMD> createPlaceBlockage -box 10.26800 12.09600 11.52400 13.50150 -type hard
+<CMD> dbSet [uiGetRecordObjByInfo -objType pBlkg -rect 10.2 11.97 11.6 13.68 -name defScreenName].type Soft
+<CMD> dbSet [uiGetRecordObjByInfo -objType pBlkg -rect 10.2 11.97 11.6 13.68 -name defScreenName].density 50
+<CMD> dbSet [uiGetRecordObjByInfo -objType pBlkg -rect 10.2 11.97 11.6 13.68 -name defScreenName].isNoFlop 0
+<CMD> get_verify_drc_mode -disable_rules -quiet
+<CMD> get_verify_drc_mode -quiet -area
+<CMD> get_verify_drc_mode -quiet -layer_range
+<CMD> get_verify_drc_mode -check_ndr_spacing -quiet
+<CMD> get_verify_drc_mode -check_only -quiet
+<CMD> get_verify_drc_mode -check_same_via_cell -quiet
+<CMD> get_verify_drc_mode -exclude_pg_net -quiet
+<CMD> get_verify_drc_mode -ignore_trial_route -quiet
+<CMD> get_verify_drc_mode -max_wrong_way_halo -quiet
+<CMD> get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+<CMD> get_verify_drc_mode -limit -quiet
+<CMD> set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report counter.drc.rpt -limit 1000
+<CMD> verify_drc
+#-check_ndr_spacing auto                 # enums={true false auto}, default=auto,  user setting
+#-check_same_via_cell true               # bool, default=false, user setting
+#-report counter.drc.rpt                 # string, default="", user setting
+ *** Starting Verify DRC (MEM: 1368.0) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+
+  Verification Complete : 0 Viols.
+
+ *** End Verify DRC (CPU: 0:00:00.0  ELAPSED TIME: 0.00  MEM: 0.0M) ***
+
+<CMD> set_verify_drc_mode -area {0 0 0 0}
+<CMD> set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report counter.drc.rpt -limit 1000
+<CMD> verify_drc
+#-check_ndr_spacing auto                 # enums={true false auto}, default=auto,  user setting
+#-check_same_via_cell true               # bool, default=false, user setting
+#-report counter.drc.rpt                 # string, default="", user setting
+ *** Starting Verify DRC (MEM: 1365.7) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+
+  Verification Complete : 0 Viols.
+
+ *** End Verify DRC (CPU: 0:00:00.0  ELAPSED TIME: 0.00  MEM: 0.0M) ***
+
+<CMD> set_verify_drc_mode -area {0 0 0 0}
+<CMD> verifyConnectivity -type all -error 1000 -warning 50
+VERIFY_CONNECTIVITY use new engine.
+
+******** Start: VERIFY CONNECTIVITY ********
+Start Time: Sat Aug 19 02:57:15 2023
+
+Design Name: counter
+Database Units: 2000
+Design Boundary: (0.0000, 0.0000) (22.6000, 18.8100)
+Error Limit = 1000; Warning Limit = 50
+Check all nets
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[0] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[1] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[2] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[4] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[3] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[7] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[5] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[6] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[0] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[1] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[2] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[4] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[3] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[7] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[5] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[6] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin A of net count[7] has not been placed. Please make sure instance g269__6260 is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin Q of net count[7] has not been placed. Please make sure instance count_reg[7] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin A of net count[6] has not been placed. Please make sure instance g273__3680 is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin A of net count[6] has not been placed. Please make sure instance g260__2398 is placed and rerun verifyConnectivity.
+**WARN: (EMS-27):	Message (IMPVFC-96) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+
+Begin Summary 
+  Found no problems or warnings.
+End Summary
+
+End Time: Sat Aug 19 02:57:15 2023
+Time Elapsed: 0:00:00.0
+
+******** End: VERIFY CONNECTIVITY ********
+  Verification Complete : 0 Viols.  0 Wrngs.
+  (CPU Time: 0:00:00.0  MEM: 0.000M)
+
+<CMD> verifyConnectivity -type all -error 1000 -warning 50
+VERIFY_CONNECTIVITY use new engine.
+
+******** Start: VERIFY CONNECTIVITY ********
+Start Time: Sat Aug 19 02:57:19 2023
+
+Design Name: counter
+Database Units: 2000
+Design Boundary: (0.0000, 0.0000) (22.6000, 18.8100)
+Error Limit = 1000; Warning Limit = 50
+Check all nets
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[0] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[1] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[2] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[4] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[3] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[7] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[5] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin CK of net clk has not been placed. Please make sure instance count_reg[6] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[0] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[1] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[2] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[4] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[3] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[7] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[5] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin RN of net rst has not been placed. Please make sure instance count_reg[6] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin A of net count[7] has not been placed. Please make sure instance g269__6260 is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin Q of net count[7] has not been placed. Please make sure instance count_reg[7] is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin A of net count[6] has not been placed. Please make sure instance g273__3680 is placed and rerun verifyConnectivity.
+**WARN: (IMPVFC-96):	Instance pin A of net count[6] has not been placed. Please make sure instance g260__2398 is placed and rerun verifyConnectivity.
+**WARN: (EMS-27):	Message (IMPVFC-96) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+
+Begin Summary 
+  Found no problems or warnings.
+End Summary
+
+End Time: Sat Aug 19 02:57:19 2023
+Time Elapsed: 0:00:00.0
+
+******** End: VERIFY CONNECTIVITY ********
+  Verification Complete : 0 Viols.  0 Wrngs.
+  (CPU Time: 0:00:00.0  MEM: 0.000M)
+
+<CMD> saveDesign counter_blockage
+#% Begin save design ... (date=08/19 02:58:52, mem=1124.0M)
+% Begin Save ccopt configuration ... (date=08/19 02:58:52, mem=1124.0M)
+% End Save ccopt configuration ... (date=08/19 02:58:52, total cpu=0:00:00.0, real=0:00:00.0, peak res=1124.2M, current mem=1124.2M)
+% Begin Save netlist data ... (date=08/19 02:58:52, mem=1124.2M)
+Writing Binary DB to counter_blockage.dat/counter.v.bin in single-threaded mode...
+% End Save netlist data ... (date=08/19 02:58:52, total cpu=0:00:00.0, real=0:00:00.0, peak res=1124.2M, current mem=1124.2M)
+Saving symbol-table file ...
+Saving congestion map file counter_blockage.dat/counter.route.congmap.gz ...
+% Begin Save AAE data ... (date=08/19 02:58:52, mem=1124.2M)
+Saving AAE Data ...
+% End Save AAE data ... (date=08/19 02:58:52, total cpu=0:00:00.0, real=0:00:00.0, peak res=1124.2M, current mem=1124.2M)
+Saving preference file counter_blockage.dat/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+% Begin Save floorplan data ... (date=08/19 02:58:53, mem=1124.4M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=08/19 02:58:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=1124.4M, current mem=1124.4M)
+Saving PG file counter_blockage.dat/counter.pg.gz, version#2, (Created by Innovus v21.10-p004_1 on Sat Aug 19 02:58:53 2023)
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=1362.2M) ***
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+% Begin Save placement data ... (date=08/19 02:58:53, mem=1124.4M)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+% End Save placement data ... (date=08/19 02:58:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=1124.4M, current mem=1124.4M)
+% Begin Save routing data ... (date=08/19 02:58:53, mem=1124.4M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1362.2M) ***
+% End Save routing data ... (date=08/19 02:58:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=1124.5M, current mem=1124.5M)
+Saving property file counter_blockage.dat/counter.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1365.2M) ***
+% Begin Save power constraints data ... (date=08/19 02:58:53, mem=1124.5M)
+% End Save power constraints data ... (date=08/19 02:58:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=1124.5M, current mem=1124.5M)
+rc_corner
+rc_corner
+rc_corner
+Generated self-contained design counter_blockage.dat
+#% End save design ... (date=08/19 02:58:53, total cpu=0:00:00.4, real=0:00:01.0, peak res=1155.2M, current mem=1125.0M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+<CMD> saveDesign counter_blockage
+#% Begin save design ... (date=08/19 02:58:57, mem=1125.0M)
+% Begin Save ccopt configuration ... (date=08/19 02:58:57, mem=1125.0M)
+% End Save ccopt configuration ... (date=08/19 02:58:57, total cpu=0:00:00.0, real=0:00:00.0, peak res=1125.0M, current mem=1125.0M)
+% Begin Save netlist data ... (date=08/19 02:58:57, mem=1125.0M)
+Writing Binary DB to counter_blockage.dat.tmp/counter.v.bin in single-threaded mode...
+% End Save netlist data ... (date=08/19 02:58:57, total cpu=0:00:00.0, real=0:00:00.0, peak res=1125.0M, current mem=1125.0M)
+Saving symbol-table file ...
+Saving congestion map file counter_blockage.dat.tmp/counter.route.congmap.gz ...
+% Begin Save AAE data ... (date=08/19 02:58:57, mem=1125.0M)
+Saving AAE Data ...
+% End Save AAE data ... (date=08/19 02:58:57, total cpu=0:00:00.0, real=0:00:00.0, peak res=1125.0M, current mem=1125.0M)
+Saving preference file counter_blockage.dat.tmp/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+% Begin Save floorplan data ... (date=08/19 02:58:57, mem=1125.0M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=08/19 02:58:57, total cpu=0:00:00.0, real=0:00:00.0, peak res=1125.0M, current mem=1125.0M)
+Saving PG file counter_blockage.dat.tmp/counter.pg.gz, version#2, (Created by Innovus v21.10-p004_1 on Sat Aug 19 02:58:57 2023)
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=1364.8M) ***
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+% Begin Save placement data ... (date=08/19 02:58:57, mem=1125.0M)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+% End Save placement data ... (date=08/19 02:58:57, total cpu=0:00:00.0, real=0:00:00.0, peak res=1125.0M, current mem=1125.0M)
+% Begin Save routing data ... (date=08/19 02:58:57, mem=1125.0M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1364.8M) ***
+% End Save routing data ... (date=08/19 02:58:57, total cpu=0:00:00.0, real=0:00:00.0, peak res=1125.0M, current mem=1125.0M)
+Saving property file counter_blockage.dat.tmp/counter.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1367.8M) ***
+% Begin Save power constraints data ... (date=08/19 02:58:57, mem=1125.0M)
+% End Save power constraints data ... (date=08/19 02:58:57, total cpu=0:00:00.0, real=0:00:00.0, peak res=1125.0M, current mem=1125.0M)
+rc_corner
+rc_corner
+rc_corner
+Generated self-contained design counter_blockage.dat.tmp
+#% End save design ... (date=08/19 02:58:58, total cpu=0:00:00.4, real=0:00:01.0, peak res=1155.8M, current mem=1125.1M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+<CMD> setPlaceMode -fp false
+<CMD> place_design
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+*** Starting placeDesign default flow ***
+*** Start deleteBufferTree ***
+Info: Detect buffers to remove automatically.
+Analyzing netlist ...
+Updating netlist
+
+*summary: 0 instances (buffers/inverters) removed
+*** Finish deleteBufferTree (0:00:00.1) ***
+**INFO: Enable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+**INFO: Analyzing IO path groups for slack adjustment
+Effort level <high> specified for reg2reg_tmp.27127 path_group
+AAE_INFO: opIsDesignInPostRouteState() is 0
+AAE DB initialization (MEM=1415.07 CPU=0:00:00.0 REAL=0:00:00.0) 
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: counter
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (1 T). (MEM=1415.07)
+Total number of fetched objects 26
+End delay calculation. (MEM=1475.27 CPU=0:00:00.0 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1457.73 CPU=0:00:00.0 REAL=0:00:00.0)
+**INFO: Disable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+**INFO: Pre-place timing setting for timing analysis already disabled
+Deleted 0 physical inst  (cell - / prefix -).
+INFO: #ExclusiveGroups=0
+INFO: There are no Exclusive Groups.
+*** Starting "NanoPlace(TM) placement v#2 (mem=1448.2M)" ...
+*** Build Buffered Sizing Timing Model
+(cpu=0:00:00.8 mem=1456.2M) ***
+*** Build Virtual Sizing Timing Model
+(cpu=0:00:00.9 mem=1456.2M) ***
+No user-set net weight.
+Net fanout histogram:
+2		: 10 (38.5%) nets
+3		: 4 (15.4%) nets
+4     -	14	: 12 (46.2%) nets
+15    -	39	: 0 (0.0%) nets
+40    -	79	: 0 (0.0%) nets
+80    -	159	: 0 (0.0%) nets
+160   -	319	: 0 (0.0%) nets
+320   -	639	: 0 (0.0%) nets
+640   -	1279	: 0 (0.0%) nets
+1280  -	2559	: 0 (0.0%) nets
+2560  -	5119	: 0 (0.0%) nets
+5120+		: 0 (0.0%) nets
+Options: timingDriven clkGateAware ignoreScan pinGuide congEffort=auto gpeffort=medium 
+Scan chains were not defined.
+#std cell=23 (0 fixed + 23 movable) #buf cell=0 #inv cell=1 #block=0 (0 floating + 0 preplaced)
+#ioInst=0 #net=26 #term=93 #term/net=3.58, #fixedIo=0, #floatIo=0, #fixedPin=0, #floatPin=10
+stdCell: 23 single + 0 double + 0 multi
+Total standard cell length = 0.0434 (mm), area = 0.0001 (mm^2)
+Estimated cell power/ground rail width = 0.160 um
+Average module density = 0.705.
+Density for the design = 0.705.
+       = stdcell_area 217 sites (74 um^2) / alloc_area 308 sites (105 um^2).
+Pin Density = 0.2952.
+            = total # of pins 93 / total area 315.
+=== lastAutoLevel = 4 
+Clock gating cells determined by native netlist tracing.
+Iteration  1: Total net bbox = 1.739e+02 (7.97e+01 9.42e+01)
+              Est.  stn bbox = 1.896e+02 (8.88e+01 1.01e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1494.1M
+Iteration  2: Total net bbox = 1.739e+02 (7.97e+01 9.42e+01)
+              Est.  stn bbox = 1.896e+02 (8.88e+01 1.01e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1494.1M
+Iteration  3: Total net bbox = 1.494e+02 (6.18e+01 8.76e+01)
+              Est.  stn bbox = 1.653e+02 (7.12e+01 9.41e+01)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1495.5M
+Active setup views:
+    setup
+Iteration  4: Total net bbox = 1.650e+02 (6.15e+01 1.03e+02)
+              Est.  stn bbox = 1.844e+02 (7.19e+01 1.13e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1495.5M
+Iteration  5: Total net bbox = 2.040e+02 (8.26e+01 1.21e+02)
+              Est.  stn bbox = 2.244e+02 (9.40e+01 1.30e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1495.5M
+Iteration  6: Total net bbox = 2.106e+02 (9.04e+01 1.20e+02)
+              Est.  stn bbox = 2.306e+02 (1.01e+02 1.29e+02)
+              cpu = 0:00:00.0 real = 0:00:01.0 mem = 1495.5M
+*** cost = 2.106e+02 (9.04e+01 1.20e+02) (cpu for global=0:00:00.0) real=0:00:01.0***
+Info: 0 clock gating cells identified, 0 (on average) moved 0/1
+Solver runtime cpu: 0:00:00.0 real: 0:00:00.0
+Core Placement runtime cpu: 0:00:00.0 real: 0:00:01.0
+**WARN: (IMPSP-9025):	No scan chain specified/traced.
+Type 'man IMPSP-9025' for more detail.
+*** Starting refinePlace (0:58:50 mem=1503.5M) ***
+Total net bbox length = 2.106e+02 (9.043e+01 1.202e+02) (ext = 7.143e+01)
+Move report: Detail placement moves 23 insts, mean move: 0.58 um, max move: 2.32 um 
+	Max move on inst (g271__1617): (11.84, 11.94) --> (11.20, 10.26)
+	Runtime: CPU: 0:00:00.0 REAL: 0:00:00.0 MEM: 1508.6MB
+Summary Report:
+Instances move: 23 (out of 23 movable)
+Instances flipped: 0
+Mean displacement: 0.58 um
+Max displacement: 2.32 um (Instance: g271__1617) (11.8425, 11.9415) -> (11.2, 10.26)
+	Length: 4 sites, height: 1 rows, site name: CoreSite, cell type: AND2XL
+Total net bbox length = 2.225e+02 (9.079e+01 1.317e+02) (ext = 6.728e+01)
+Runtime: CPU: 0:00:00.0 REAL: 0:00:00.0 MEM: 1508.6MB
+*** Finished refinePlace (0:58:50 mem=1508.6M) ***
+*** End of Placement (cpu=0:00:01.2, real=0:00:02.0, mem=1503.6M) ***
+default core: bins with density > 0.750 =  0.00 % ( 0 / 1 )
+Density distribution unevenness ratio = 0.000%
+*** Free Virtual Timing Model ...(mem=1503.6M)
+**INFO: Enable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+**INFO: Analyzing IO path groups for slack adjustment
+Effort level <high> specified for reg2reg_tmp.27127 path_group
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: counter
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (1 T). (MEM=1492.05)
+Total number of fetched objects 26
+End delay calculation. (MEM=1519.24 CPU=0:00:00.0 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1519.24 CPU=0:00:00.0 REAL=0:00:00.0)
+**INFO: Disable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Info: Disable timing driven in postCTS congRepair.
+
+Starting congRepair ...
+[NR-eGR] Track table information for default rule: 
+[NR-eGR] Metal1 has no routable track
+[NR-eGR] Metal2 has single uniform track structure
+[NR-eGR] Metal3 has single uniform track structure
+[NR-eGR] Metal4 has single uniform track structure
+[NR-eGR] Metal5 has single uniform track structure
+[NR-eGR] Metal6 has single uniform track structure
+[NR-eGR] Metal7 has single uniform track structure
+[NR-eGR] Metal8 has single uniform track structure
+[NR-eGR] Metal9 has single uniform track structure
+[NR-eGR] Metal10 has single uniform track structure
+[NR-eGR] Metal11 has single uniform track structure
+[NR-eGR] Read 452 PG shapes
+[NR-eGR] Read 0 clock shapes
+[NR-eGR] Read 0 other shapes
+[NR-eGR] #Routing Blockages  : 0
+[NR-eGR] #Instance Blockages : 0
+[NR-eGR] #PG Blockages       : 452
+[NR-eGR] #Halo Blockages     : 0
+[NR-eGR] #Boundary Blockages : 0
+[NR-eGR] #Clock Blockages    : 0
+[NR-eGR] #Other Blockages    : 0
+[NR-eGR] Num Prerouted Nets = 0  Num Prerouted Wires = 0
+[NR-eGR] Read 26 nets ( ignored 0 )
+[NR-eGR] There are 1 clock nets ( 0 with NDR ).
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id: 0  Nets: 26
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 26 net(s) in layer range [2, 11]
+[NR-eGR] Early Global Route overflow of layer group 1: 0.00% H + 0.00% V. EstWL: 2.240100e+02um
+[NR-eGR] Congestion Analysis By layer: (blocked Gcells are excluded) 
+[NR-eGR]                        OverCon            
+[NR-eGR]                         #Gcell     %Gcell
+[NR-eGR]        Layer             (1-0)    OverCon
+[NR-eGR] ----------------------------------------------
+[NR-eGR]  Metal1 ( 1)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal2 ( 2)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal3 ( 3)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal4 ( 4)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal5 ( 5)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal6 ( 6)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal7 ( 7)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal8 ( 8)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal9 ( 9)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal10 (10)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal11 (11)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] ----------------------------------------------
+[NR-eGR]        Total         0( 0.00%)   ( 0.00%) 
+[NR-eGR] 
+[NR-eGR] Overflow after Early Global Route 0.00% H + 0.00% V
+Early Global Route congestion estimation runtime: 0.01 seconds, mem = 1517.7M
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+Skipped repairing congestion.
+[NR-eGR]                  Length (um)  Vias 
+[NR-eGR] -----------------------------------
+[NR-eGR]  Metal1   (1H)             0    93 
+[NR-eGR]  Metal2   (2V)           154   144 
+[NR-eGR]  Metal3   (3H)           109     2 
+[NR-eGR]  Metal4   (4V)             5     0 
+[NR-eGR]  Metal5   (5H)             0     0 
+[NR-eGR]  Metal6   (6V)             0     0 
+[NR-eGR]  Metal7   (7H)             0     0 
+[NR-eGR]  Metal8   (8V)             0     0 
+[NR-eGR]  Metal9   (9H)             0     0 
+[NR-eGR]  Metal10  (10V)            0     0 
+[NR-eGR]  Metal11  (11H)            0     0 
+[NR-eGR] -----------------------------------
+[NR-eGR]           Total          269   239 
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total half perimeter of net bounding box: 222um
+[NR-eGR] Total length: 269um, number of vias: 239
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total eGR-routed clock nets wire length: 29um, number of vias: 25
+[NR-eGR] --------------------------------------------------------------------------
+Early Global Route wiring runtime: 0.00 seconds, mem = 1454.7M
+Tdgp not successfully inited but do clear! skip clearing
+End of congRepair (cpu=0:00:00.0, real=0:00:00.0)
+*** Finishing placeDesign default flow ***
+**placeDesign ... cpu = 0: 0: 2, real = 0: 0: 3, mem = 1454.7M **
+Tdgp not successfully inited but do clear! skip clearing
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPDC-1629           2  The default delay limit was set to %d. T...
+WARNING   IMPSP-9025           1  No scan chain specified/traced.          
+*** Message Summary: 3 warning(s), 0 error(s)
+
+<CMD> get_verify_drc_mode -disable_rules -quiet
+<CMD> get_verify_drc_mode -quiet -area
+<CMD> get_verify_drc_mode -quiet -layer_range
+<CMD> get_verify_drc_mode -check_ndr_spacing -quiet
+<CMD> get_verify_drc_mode -check_only -quiet
+<CMD> get_verify_drc_mode -check_same_via_cell -quiet
+<CMD> get_verify_drc_mode -exclude_pg_net -quiet
+<CMD> get_verify_drc_mode -ignore_trial_route -quiet
+<CMD> get_verify_drc_mode -max_wrong_way_halo -quiet
+<CMD> get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+<CMD> get_verify_drc_mode -limit -quiet
+<CMD> set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report counter.drc.rpt -limit 1000
+<CMD> verify_drc
+#-check_ndr_spacing auto                 # enums={true false auto}, default=auto,  user setting
+#-check_same_via_cell true               # bool, default=false, user setting
+#-report counter.drc.rpt                 # string, default="", user setting
+ *** Starting Verify DRC (MEM: 1459.4) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+
+  Verification Complete : 139 Viols.
+
+ Violation Summary By Layer and Type:
+
+	         MetSpc    Short      Mar outOfDie   EOLSpc    NSMet   Totals
+	Metal1       19        7        0       10        6        0       42
+	Metal2       16       20       33       10        3        1       83
+	Metal3        7        6        0        0        0        0       13
+	Metal4        0        1        0        0        0        0        1
+	Totals       42       34       33       20        9        1      139
+
+ *** End Verify DRC (CPU: 0:00:00.0  ELAPSED TIME: 0.00  MEM: 0.0M) ***
+
+<CMD> set_verify_drc_mode -area {0 0 0 0}
+<CMD> verifyConnectivity -type all -error 1000 -warning 50
+VERIFY_CONNECTIVITY use new engine.
+
+******** Start: VERIFY CONNECTIVITY ********
+Start Time: Sat Aug 19 03:05:00 2023
+
+Design Name: counter
+Database Units: 2000
+Design Boundary: (0.0000, 0.0000) (22.6000, 18.8100)
+Error Limit = 1000; Warning Limit = 50
+Check all nets
+
+Begin Summary 
+  Found no problems or warnings.
+End Summary
+
+End Time: Sat Aug 19 03:05:00 2023
+Time Elapsed: 0:00:00.0
+
+******** End: VERIFY CONNECTIVITY ********
+  Verification Complete : 0 Viols.  0 Wrngs.
+  (CPU Time: 0:00:00.0  MEM: 0.000M)
+
+<CMD> get_verify_drc_mode -disable_rules -quiet
+<CMD> get_verify_drc_mode -quiet -area
+<CMD> get_verify_drc_mode -quiet -layer_range
+<CMD> get_verify_drc_mode -check_ndr_spacing -quiet
+<CMD> get_verify_drc_mode -check_only -quiet
+<CMD> get_verify_drc_mode -check_same_via_cell -quiet
+<CMD> get_verify_drc_mode -exclude_pg_net -quiet
+<CMD> get_verify_drc_mode -ignore_trial_route -quiet
+<CMD> get_verify_drc_mode -max_wrong_way_halo -quiet
+<CMD> get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+<CMD> get_verify_drc_mode -limit -quiet
+<CMD> set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report counter.drc.rpt -limit 1000
+<CMD> verify_drc
+#-check_ndr_spacing auto                 # enums={true false auto}, default=auto,  user setting
+#-check_same_via_cell true               # bool, default=false, user setting
+#-report counter.drc.rpt                 # string, default="", user setting
+ *** Starting Verify DRC (MEM: 1459.4) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+
+  Verification Complete : 139 Viols.
+
+ Violation Summary By Layer and Type:
+
+	         MetSpc    Short      Mar outOfDie   EOLSpc    NSMet   Totals
+	Metal1       19        7        0       10        6        0       42
+	Metal2       16       20       33       10        3        1       83
+	Metal3        7        6        0        0        0        0       13
+	Metal4        0        1        0        0        0        0        1
+	Totals       42       34       33       20        9        1      139
+
+ *** End Verify DRC (CPU: 0:00:00.0  ELAPSED TIME: 0.00  MEM: 0.0M) ***
+
+<CMD> set_verify_drc_mode -area {0 0 0 0}
+<CMD> checkPlace
+Begin checking placement ... (start mem=1459.4M, init mem=1491.4M)
+*info: Placed = 23            
+*info: Unplaced = 0           
+Placement Density:68.89%(74/108)
+Placement Density (including fixed std cells):68.89%(74/108)
+Finished checkPlace (total: cpu=0:00:00.1, real=0:00:00.0; vio checks: cpu=0:00:00.0, real=0:00:00.0; mem=1491.4M)
+<CMD> createPlaceBlockage -box 23.06550 13.53100 23.18500 13.65100 -type hard
+**WARN: (IMPFP-122):	The specified box is outside the die box.
+<CMD> createPlaceBlockage -box 14.66350 18.91350 15.20150 24.64200 -type hard
+**WARN: (IMPFP-122):	The specified box is outside the die box.
+<CMD> zoomBox -387.27000 -98.60100 33.91200 229.24800
+<CMD> zoomBox -45783.85050 -12336.85200 1132.21750 24182.74200
+<CMD> zoomBox -53867.58300 -14516.10700 1327.79150 28448.12150
+<CMD> zoomBox 16.89000 10.34700 24.13500 15.98650
+<CMD> zoomBox -34.54500 -3.52000 25.37950 43.12550
+<CMD> zoomBox -158.54750 -36.94950 28.38000 108.55550
+<CMD> zoomBox -325.67200 -82.00400 32.42350 196.73850
+<CMD> zoomBox -645.83000 -168.31400 40.16900 365.66950
+<CMD> zoomBox -71.30800 -13.43200 26.27000 62.52300
+<CMD> zoomBox 22.78100 11.93000 23.99450 12.87450
+<CMD> zoomBox 23.23750 12.05300 23.98350 12.63350
+<CMD> zoomBox 23.91150 12.23450 23.96800 12.27850
+<CMD> zoomBox 23.68400 12.17200 23.97450 12.39800
+<CMD> zoomBox -136.90500 -31.12300 27.85900 97.12950
+<CMD> zoomBox -107060.16350 -28856.05900 2614.71200 56515.16000
+<CMD> zoomBox 14855.97200 -330461.81000 -1058885.85200 646837.52300
+<CMD> zoomBox 33759.90250 12.20100 33760.03250 12.30200
+<CMD> zoomBox 33760.02650 12.23200 33760.03100 12.23550
+<CMD> fit
+<CMD> saveDesign counter_placement
+#% Begin save design ... (date=08/19 03:09:34, mem=1191.3M)
+% Begin Save ccopt configuration ... (date=08/19 03:09:34, mem=1191.3M)
+% End Save ccopt configuration ... (date=08/19 03:09:34, total cpu=0:00:00.0, real=0:00:00.0, peak res=1191.5M, current mem=1191.5M)
+% Begin Save netlist data ... (date=08/19 03:09:34, mem=1191.5M)
+Writing Binary DB to counter_placement.dat/counter.v.bin in single-threaded mode...
+% End Save netlist data ... (date=08/19 03:09:34, total cpu=0:00:00.0, real=0:00:00.0, peak res=1191.5M, current mem=1191.5M)
+Saving symbol-table file ...
+Saving congestion map file counter_placement.dat/counter.route.congmap.gz ...
+% Begin Save AAE data ... (date=08/19 03:09:35, mem=1191.8M)
+Saving AAE Data ...
+% End Save AAE data ... (date=08/19 03:09:35, total cpu=0:00:00.0, real=0:00:00.0, peak res=1191.9M, current mem=1191.9M)
+Saving preference file counter_placement.dat/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+% Begin Save floorplan data ... (date=08/19 03:09:35, mem=1192.2M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=08/19 03:09:35, total cpu=0:00:00.0, real=0:00:00.0, peak res=1192.2M, current mem=1192.2M)
+Saving PG file counter_placement.dat/counter.pg.gz, version#2, (Created by Innovus v21.10-p004_1 on Sat Aug 19 03:09:35 2023)
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=1488.4M) ***
+Saving Drc markers ...
+... 139 markers are saved ...
+... 139 geometry drc markers are saved ...
+... 0 antenna drc markers are saved ...
+% Begin Save placement data ... (date=08/19 03:09:35, mem=1192.2M)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+% End Save placement data ... (date=08/19 03:09:35, total cpu=0:00:00.0, real=0:00:00.0, peak res=1192.2M, current mem=1192.2M)
+% Begin Save routing data ... (date=08/19 03:09:35, mem=1192.2M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1488.4M) ***
+% End Save routing data ... (date=08/19 03:09:35, total cpu=0:00:00.0, real=0:00:00.0, peak res=1192.4M, current mem=1192.4M)
+Saving property file counter_placement.dat/counter.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1491.4M) ***
+% Begin Save power constraints data ... (date=08/19 03:09:35, mem=1192.4M)
+% End Save power constraints data ... (date=08/19 03:09:35, total cpu=0:00:00.0, real=0:00:00.0, peak res=1192.4M, current mem=1192.4M)
+rc_corner
+rc_corner
+rc_corner
+Generated self-contained design counter_placement.dat
+#% End save design ... (date=08/19 03:09:35, total cpu=0:00:00.4, real=0:00:02.0, peak res=1222.4M, current mem=1191.4M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+<CMD> saveDesign counter_placement
+#% Begin save design ... (date=08/19 03:10:14, mem=1191.7M)
+% Begin Save ccopt configuration ... (date=08/19 03:10:14, mem=1191.7M)
+% End Save ccopt configuration ... (date=08/19 03:10:14, total cpu=0:00:00.0, real=0:00:00.0, peak res=1191.9M, current mem=1191.9M)
+% Begin Save netlist data ... (date=08/19 03:10:14, mem=1191.9M)
+Writing Binary DB to counter_placement.dat.tmp/counter.v.bin in single-threaded mode...
+% End Save netlist data ... (date=08/19 03:10:14, total cpu=0:00:00.0, real=0:00:00.0, peak res=1191.9M, current mem=1191.9M)
+Saving symbol-table file ...
+Saving congestion map file counter_placement.dat.tmp/counter.route.congmap.gz ...
+% Begin Save AAE data ... (date=08/19 03:10:14, mem=1191.9M)
+Saving AAE Data ...
+% End Save AAE data ... (date=08/19 03:10:14, total cpu=0:00:00.0, real=0:00:00.0, peak res=1191.9M, current mem=1191.9M)
+Saving preference file counter_placement.dat.tmp/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+% Begin Save floorplan data ... (date=08/19 03:10:14, mem=1192.1M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=08/19 03:10:14, total cpu=0:00:00.0, real=0:00:00.0, peak res=1192.1M, current mem=1192.1M)
+Saving PG file counter_placement.dat.tmp/counter.pg.gz, version#2, (Created by Innovus v21.10-p004_1 on Sat Aug 19 03:10:14 2023)
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=1490.9M) ***
+Saving Drc markers ...
+... 139 markers are saved ...
+... 139 geometry drc markers are saved ...
+... 0 antenna drc markers are saved ...
+% Begin Save placement data ... (date=08/19 03:10:14, mem=1192.1M)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+% End Save placement data ... (date=08/19 03:10:14, total cpu=0:00:00.0, real=0:00:00.0, peak res=1192.1M, current mem=1192.1M)
+% Begin Save routing data ... (date=08/19 03:10:14, mem=1192.1M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1490.9M) ***
+% End Save routing data ... (date=08/19 03:10:15, total cpu=0:00:00.0, real=0:00:00.0, peak res=1192.2M, current mem=1192.2M)
+Saving property file counter_placement.dat.tmp/counter.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1493.9M) ***
+% Begin Save power constraints data ... (date=08/19 03:10:15, mem=1192.2M)
+% End Save power constraints data ... (date=08/19 03:10:15, total cpu=0:00:00.0, real=0:00:00.0, peak res=1192.2M, current mem=1192.2M)
+rc_corner
+rc_corner
+rc_corner
+Generated self-contained design counter_placement.dat.tmp
+#% End save design ... (date=08/19 03:10:15, total cpu=0:00:00.4, real=0:00:01.0, peak res=1222.9M, current mem=1192.2M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+<CMD> report_timing
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: counter
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Extraction called for design 'counter' of instances=23 and nets=28 using extraction engine 'preRoute' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+PreRoute RC Extraction called for design counter.
+RC Extraction called in multi-corner(1) mode.
+RCMode: PreRoute
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 0.90000
+PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Using capacitance table file ...
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+PreRoute RC Extraction DONE (CPU Time: 0:00:00.1  Real Time: 0:00:00.0  MEM: 1493.660M)
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (1 T). (MEM=1500.94)
+Total number of fetched objects 26
+End delay calculation. (MEM=1529.14 CPU=0:00:00.0 REAL=0:00:05.0)
+End delay calculation (fullDC). (MEM=1529.14 CPU=0:00:00.0 REAL=0:00:05.0)
+Path 1: VIOLATED Setup Check with Pin count_reg[7]/CK 
+Endpoint:   count_reg[7]/D (^) checked with  leading edge of 'clk'
+Beginpoint: count_reg[0]/Q (^) triggered by  leading edge of 'clk'
+Path Groups: {clk}
+Analysis View: setup
+Other End Arrival Time          0.000
+- Setup                         0.111
++ Phase Shift                   1.000
+- Uncertainty                   0.010
+= Required Time                 0.879
+- Arrival Time                  1.029
+= Slack Time                   -0.149
+     Clock Rise Edge                 0.000
+     + Clock Network Latency (Ideal) 0.000
+     = Beginpoint Arrival Time       0.000
+     +--------------------------------------------------------------------+ 
+     |   Instance   |     Arc     |   Cell   | Delay | Arrival | Required | 
+     |              |             |          |       |  Time   |   Time   | 
+     |--------------+-------------+----------+-------+---------+----------| 
+     | count_reg[0] | CK ^        |          |       |   0.000 |   -0.149 | 
+     | count_reg[0] | CK ^ -> Q ^ | DFFRX1   | 0.314 |   0.314 |    0.165 | 
+     | g281__7098   | B ^ -> Y v  | NAND2X1  | 0.112 |   0.426 |    0.277 | 
+     | g276__1705   | B v -> Y ^  | NOR2X1   | 0.125 |   0.552 |    0.403 | 
+     | g273__3680   | D ^ -> Y v  | NAND4XL  | 0.219 |   0.771 |    0.622 | 
+     | g269__6260   | B v -> Y ^  | XNOR2X1  | 0.258 |   1.029 |    0.879 | 
+     | count_reg[7] | D ^         | DFFRHQX1 | 0.000 |   1.029 |    0.879 | 
+     +--------------------------------------------------------------------+ 
+
+<CMD> optDesign -preCTS
+**optDesign ... cpu = 0:00:00, real = 0:00:00, mem = 1220.3M, totSessionCpu=1:00:24 **
+Executing: place_opt_design -opt
+**INFO: User settings:
+setExtractRCMode -engine                   preRoute
+setDelayCalMode -engine                    aae
+setDelayCalMode -ignoreNetLoad             false
+setPlaceMode -place_design_floorplan_mode  false
+setAnalysisMode -analysisType              bcwc
+setAnalysisMode -clkSrcPath                true
+setAnalysisMode -clockPropagation          sdcControl
+setAnalysisMode -virtualIPO                false
+
+*** place_opt_design #1 [begin] : totSession cpu/real = 1:00:24.0/4:49:56.9 (0.2), mem = 1486.1M
+No user sequential activity specified, applying default sequential activity of "0.2" for Dynamic Power reporting.
+'set_default_switching_activity' finished successfully.
+*** Starting GigaPlace ***
+*** GlobalPlace #1 [begin] : totSession cpu/real = 1:00:24.0/4:49:56.9 (0.2), mem = 1518.2M
+*** GlobalPlace #1 [finish] : cpu/real = 0:00:00.0/0:00:00.0 (0.0), totSession cpu/real = 1:00:24.0/4:49:56.9 (0.2), mem = 1518.2M
+Enable CTE adjustment.
+**optDesign ... cpu = 0:00:00, real = 0:00:00, mem = 1221.9M, totSessionCpu=1:00:24 **
+**INFO: setDesignMode -flowEffort standard -> setting 'setOptMode -allEndPoints true' for the duration of this command.
+*** InitOpt #1 [begin] : totSession cpu/real = 1:00:24.1/4:49:56.9 (0.2), mem = 1518.2M
+GigaOpt running with 1 threads.
+AAE DB initialization (MEM=1509.12 CPU=0:00:00.0 REAL=0:00:00.0) 
+Setting timing_disable_library_data_to_data_checks to 'true'.
+Setting timing_disable_user_data_to_data_checks to 'true'.
+**optDesign ... cpu = 0:00:01, real = 0:00:01, mem = 1198.1M, totSessionCpu=1:00:25 **
+*** optDesign -preCTS ***
+DRC Margin: user margin 0.0; extra margin 0.2
+Setup Target Slack: user slack 0; extra slack 0.0
+Hold Target Slack: user slack 0
+**WARN: (IMPOPT-3195):	Analysis mode has changed.
+Type 'man IMPOPT-3195' for more detail.
+Multi-VT timing optimization disabled based on library information.
+[NR-eGR] Started Early Global Route kernel ( Curr Mem: 1498.12 MB )
+[NR-eGR] Track table information for default rule: 
+[NR-eGR] Metal1 has no routable track
+[NR-eGR] Metal2 has single uniform track structure
+[NR-eGR] Metal3 has single uniform track structure
+[NR-eGR] Metal4 has single uniform track structure
+[NR-eGR] Metal5 has single uniform track structure
+[NR-eGR] Metal6 has single uniform track structure
+[NR-eGR] Metal7 has single uniform track structure
+[NR-eGR] Metal8 has single uniform track structure
+[NR-eGR] Metal9 has single uniform track structure
+[NR-eGR] Metal10 has single uniform track structure
+[NR-eGR] Metal11 has single uniform track structure
+[NR-eGR] Read 452 PG shapes
+[NR-eGR] Read 0 clock shapes
+[NR-eGR] Read 0 other shapes
+[NR-eGR] #Routing Blockages  : 0
+[NR-eGR] #Instance Blockages : 0
+[NR-eGR] #PG Blockages       : 452
+[NR-eGR] #Halo Blockages     : 0
+[NR-eGR] #Boundary Blockages : 0
+[NR-eGR] #Clock Blockages    : 0
+[NR-eGR] #Other Blockages    : 0
+[NR-eGR] Num Prerouted Nets = 0  Num Prerouted Wires = 0
+[NR-eGR] Read 26 nets ( ignored 0 )
+[NR-eGR] There are 1 clock nets ( 0 with NDR ).
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id: 0  Nets: 26
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 26 net(s) in layer range [2, 11]
+[NR-eGR] Early Global Route overflow of layer group 1: 0.00% H + 0.00% V. EstWL: 2.257200e+02um
+[NR-eGR] Congestion Analysis By layer: (blocked Gcells are excluded) 
+[NR-eGR]                        OverCon            
+[NR-eGR]                         #Gcell     %Gcell
+[NR-eGR]        Layer             (1-0)    OverCon
+[NR-eGR] ----------------------------------------------
+[NR-eGR]  Metal1 ( 1)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal2 ( 2)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal3 ( 3)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal4 ( 4)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal5 ( 5)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal6 ( 6)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal7 ( 7)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal8 ( 8)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal9 ( 9)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal10 (10)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal11 (11)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] ----------------------------------------------
+[NR-eGR]        Total         0( 0.00%)   ( 0.00%) 
+[NR-eGR] 
+[NR-eGR] Overflow after Early Global Route 0.00% H + 0.00% V
+[NR-eGR]                  Length (um)  Vias 
+[NR-eGR] -----------------------------------
+[NR-eGR]  Metal1   (1H)             0    93 
+[NR-eGR]  Metal2   (2V)           147   143 
+[NR-eGR]  Metal3   (3H)           111     2 
+[NR-eGR]  Metal4   (4V)             5     0 
+[NR-eGR]  Metal5   (5H)             0     0 
+[NR-eGR]  Metal6   (6V)             0     0 
+[NR-eGR]  Metal7   (7H)             0     0 
+[NR-eGR]  Metal8   (8V)             0     0 
+[NR-eGR]  Metal9   (9H)             0     0 
+[NR-eGR]  Metal10  (10V)            0     0 
+[NR-eGR]  Metal11  (11H)            0     0 
+[NR-eGR] -----------------------------------
+[NR-eGR]           Total          263   238 
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total half perimeter of net bounding box: 222um
+[NR-eGR] Total length: 263um, number of vias: 238
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total eGR-routed clock nets wire length: 30um, number of vias: 25
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Finished Early Global Route kernel ( CPU: 0.02 sec, Real: 0.02 sec, Curr Mem: 1498.12 MB )
+Extraction called for design 'counter' of instances=23 and nets=28 using extraction engine 'preRoute' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+PreRoute RC Extraction called for design counter.
+RC Extraction called in multi-corner(1) mode.
+RCMode: PreRoute
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 0.90000
+PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Using capacitance table file ...
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+PreRoute RC Extraction DONE (CPU Time: 0:00:00.0  Real Time: 0:00:00.0  MEM: 1498.117M)
+Starting delay calculation for Setup views
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: counter
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (1 T). (MEM=1506.42)
+Total number of fetched objects 26
+End delay calculation. (MEM=1561.7 CPU=0:00:00.0 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1544.16 CPU=0:00:00.0 REAL=0:00:00.0)
+*** Done Building Timing Graph (cpu=0:00:00.1 real=0:00:00.0 totSessionCpu=1:00:25 mem=1544.2M)
+
+------------------------------------------------------------------
+             Initial Summary
+------------------------------------------------------------------
+
+Setup views included:
+ setup 
+
++--------------------+---------+
+|     Setup mode     |   all   |
++--------------------+---------+
+|           WNS (ns):| -0.156  |
+|           TNS (ns):| -0.295  |
+|    Violating Paths:|    3    |
+|          All Paths:|   24    |
++--------------------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 68.889%
+------------------------------------------------------------------
+**optDesign ... cpu = 0:00:01, real = 0:00:02, mem = 1237.4M, totSessionCpu=1:00:25 **
+*** InitOpt #1 [finish] : cpu/real = 0:00:01.4/0:00:01.5 (0.9), totSession cpu/real = 1:00:25.5/4:49:58.5 (0.2), mem = 1516.4M
+** INFO : this run is activating medium effort placeOptDesign flow
+*** Starting optimizing excluded clock nets MEM= 1516.4M) ***
+*info: No excluded clock nets to be optimized.
+*** Finished optimizing excluded clock nets (CPU Time= 0:00:00.0  MEM= 1516.4M) ***
+Begin: GigaOpt Route Type Constraints Refinement
+*** CongRefineRouteType #1 [begin] : totSession cpu/real = 1:00:25.5/4:49:58.5 (0.2), mem = 1516.4M
+Updated routing constraints on 0 nets.
+Bottom Preferred Layer:
+    None
+Via Pillar Rule:
+    None
+*** CongRefineRouteType #1 [finish] : cpu/real = 0:00:00.1/0:00:00.1 (1.0), totSession cpu/real = 1:00:25.6/4:49:58.6 (0.2), mem = 1696.1M
+End: GigaOpt Route Type Constraints Refinement
+The useful skew maximum allowed delay is: 0.2
+*** SimplifyNetlist #1 [begin] : totSession cpu/real = 1:00:25.7/4:49:58.6 (0.2), mem = 1696.1M
+Info: 1 clock net  excluded from IPO operation.
+
+Footprint cell information for calculating maxBufDist
+*info: There are 10 candidate Buffer cells
+*info: There are 12 candidate Inverter cells
+
+
+Netlist preparation processing... 
+Removed 0 instance
+*info: Marking 0 isolation instances dont touch
+*info: Marking 0 level shifter instances dont touch
+*** SimplifyNetlist #1 [finish] : cpu/real = 0:00:00.9/0:00:00.9 (1.0), totSession cpu/real = 1:00:26.6/4:49:59.5 (0.2), mem = 1616.1M
+
+Active setup views:
+ setup
+  Dominating endpoints: 0
+  Dominating TNS: -0.000
+
+Begin: GigaOpt Global Optimization
+*info: use new DP (enabled)
+Info: 1 clock net  excluded from IPO operation.
+*** GlobalOpt #1 [begin] : totSession cpu/real = 1:00:26.6/4:49:59.6 (0.2), mem = 1654.3M
+*info: 1 clock net excluded
+*info: 2 special nets excluded.
+*info: 2 no-driver nets excluded.
+** GigaOpt Global Opt WNS Slack -0.156  TNS Slack -0.295 
++--------+--------+---------+------------+--------+----------+---------+-----------------+
+|  WNS   |  TNS   | Density |    Real    |  Mem   |Worst View|Pathgroup|    End Point    |
++--------+--------+---------+------------+--------+----------+---------+-----------------+
+|  -0.156|  -0.295|   68.89%|   0:00:00.0| 1673.4M|     setup|  default| count_reg[7]/D  |
+|  -0.156|  -0.295|   68.89%|   0:00:00.0| 1673.4M|     setup|  default| count_reg[7]/D  |
+|  -0.156|  -0.295|   68.89%|   0:00:00.0| 1673.4M|     setup|  default| count_reg[7]/D  |
+|  -0.156|  -0.295|   68.89%|   0:00:00.0| 1673.4M|     setup|  default| count_reg[7]/D  |
+|  -0.059|  -0.114|   70.48%|   0:00:01.0| 1712.0M|     setup|  default| count_reg[6]/D  |
+|  -0.059|  -0.114|   70.48%|   0:00:00.0| 1712.0M|     setup|  default| count_reg[6]/D  |
+|  -0.059|  -0.114|   70.48%|   0:00:00.0| 1712.0M|     setup|  default| count_reg[6]/D  |
+|  -0.059|  -0.114|   70.48%|   0:00:00.0| 1712.0M|     setup|  default| count_reg[6]/D  |
+|  -0.028|  -0.052|   71.11%|   0:00:00.0| 1712.0M|     setup|  default| count_reg[6]/D  |
+|  -0.028|  -0.052|   71.11%|   0:00:00.0| 1712.0M|     setup|  default| count_reg[6]/D  |
+|  -0.028|  -0.052|   71.11%|   0:00:00.0| 1712.0M|     setup|  default| count_reg[6]/D  |
+|  -0.028|  -0.052|   71.11%|   0:00:00.0| 1712.0M|     setup|  default| count_reg[6]/D  |
+|  -0.028|  -0.052|   71.11%|   0:00:00.0| 1712.0M|     setup|  default| count_reg[6]/D  |
+|  -0.028|  -0.052|   71.11%|   0:00:00.0| 1712.0M|     setup|  default| count_reg[6]/D  |
+|  -0.028|  -0.052|   71.11%|   0:00:00.0| 1712.0M|     setup|  default| count_reg[6]/D  |
+|  -0.028|  -0.052|   71.11%|   0:00:00.0| 1712.0M|     setup|  default| count_reg[6]/D  |
+|  -0.028|  -0.052|   71.11%|   0:00:00.0| 1712.0M|     setup|  default| count_reg[6]/D  |
+|  -0.028|  -0.052|   71.11%|   0:00:00.0| 1712.0M|     setup|  default| count_reg[6]/D  |
++--------+--------+---------+------------+--------+----------+---------+-----------------+
+
+*** Finish pre-CTS Global Setup Fixing (cpu=0:00:00.0 real=0:00:01.0 mem=1712.0M) ***
+
+*** Finish pre-CTS Setup Fixing (cpu=0:00:00.0 real=0:00:01.0 mem=1712.0M) ***
+Bottom Preferred Layer:
+    None
+Via Pillar Rule:
+    None
+** GigaOpt Global Opt End WNS Slack -0.028  TNS Slack -0.052 
+*** GlobalOpt #1 [finish] : cpu/real = 0:00:00.8/0:00:00.8 (1.0), totSession cpu/real = 1:00:27.4/4:50:00.3 (0.2), mem = 1633.9M
+End: GigaOpt Global Optimization
+*** Timing NOT met, worst failing slack is -0.028
+*** Check timing (0:00:00.0)
+Info: 1 clock net  excluded from IPO operation.
+Begin: Area Reclaim Optimization
+*** AreaOpt #1 [begin] : totSession cpu/real = 1:00:27.4/4:50:00.4 (0.2), mem = 1691.1M
+Reclaim Optimization WNS Slack -0.028  TNS Slack -0.052 Density 71.11
++---------+---------+--------+--------+------------+--------+
+| Density | Commits |  WNS   |  TNS   |    Real    |  Mem   |
++---------+---------+--------+--------+------------+--------+
+|   71.11%|        -|  -0.028|  -0.052|   0:00:00.0| 1693.1M|
+|   71.11%|        0|  -0.028|  -0.052|   0:00:00.0| 1693.1M|
+|   71.11%|        0|  -0.028|  -0.052|   0:00:00.0| 1693.1M|
+|   71.11%|        0|  -0.028|  -0.052|   0:00:00.0| 1693.1M|
+|   71.11%|        0|  -0.028|  -0.052|   0:00:00.0| 1693.1M|
+|   71.11%|        0|  -0.028|  -0.052|   0:00:00.0| 1693.1M|
++---------+---------+--------+--------+------------+--------+
+Reclaim Optimization End WNS Slack -0.028  TNS Slack -0.052 Density 71.11
+Bottom Preferred Layer:
+    None
+Via Pillar Rule:
+    None
+End: Core Area Reclaim Optimization (cpu = 0:00:00.6) (real = 0:00:00.0) **
+*** AreaOpt #1 [finish] : cpu/real = 0:00:00.6/0:00:00.6 (1.0), totSession cpu/real = 1:00:28.0/4:50:01.0 (0.2), mem = 1693.1M
+Executing incremental physical updates
+Executing incremental physical updates
+End: Area Reclaim Optimization (cpu=0:00:01, real=0:00:00, mem=1636.05M, totSessionCpu=1:00:28).
+*** IncrReplace #1 [begin] : totSession cpu/real = 1:00:28.0/4:50:01.0 (0.2), mem = 1636.1M
+
+*** Start incrementalPlace ***
+No Views given, use default active views for adaptive view pruning
+SKP will enable view:
+  setup
+[NR-eGR] Track table information for default rule: 
+[NR-eGR] Metal1 has no routable track
+[NR-eGR] Metal2 has single uniform track structure
+[NR-eGR] Metal3 has single uniform track structure
+[NR-eGR] Metal4 has single uniform track structure
+[NR-eGR] Metal5 has single uniform track structure
+[NR-eGR] Metal6 has single uniform track structure
+[NR-eGR] Metal7 has single uniform track structure
+[NR-eGR] Metal8 has single uniform track structure
+[NR-eGR] Metal9 has single uniform track structure
+[NR-eGR] Metal10 has single uniform track structure
+[NR-eGR] Metal11 has single uniform track structure
+[NR-eGR] Read 452 PG shapes
+[NR-eGR] Read 0 clock shapes
+[NR-eGR] Read 0 other shapes
+[NR-eGR] #Routing Blockages  : 0
+[NR-eGR] #Instance Blockages : 0
+[NR-eGR] #PG Blockages       : 452
+[NR-eGR] #Halo Blockages     : 0
+[NR-eGR] #Boundary Blockages : 0
+[NR-eGR] #Clock Blockages    : 0
+[NR-eGR] #Other Blockages    : 0
+[NR-eGR] Num Prerouted Nets = 0  Num Prerouted Wires = 0
+[NR-eGR] Read 26 nets ( ignored 0 )
+[NR-eGR] There are 1 clock nets ( 0 with NDR ).
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id: 0  Nets: 26
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 26 net(s) in layer range [2, 11]
+[NR-eGR] Early Global Route overflow of layer group 1: 0.00% H + 0.00% V. EstWL: 2.257200e+02um
+[NR-eGR] Congestion Analysis By layer: (blocked Gcells are excluded) 
+[NR-eGR]                        OverCon            
+[NR-eGR]                         #Gcell     %Gcell
+[NR-eGR]        Layer             (1-0)    OverCon
+[NR-eGR] ----------------------------------------------
+[NR-eGR]  Metal1 ( 1)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal2 ( 2)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal3 ( 3)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal4 ( 4)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal5 ( 5)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal6 ( 6)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal7 ( 7)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal8 ( 8)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal9 ( 9)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal10 (10)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal11 (11)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] ----------------------------------------------
+[NR-eGR]        Total         0( 0.00%)   ( 0.00%) 
+[NR-eGR] 
+[NR-eGR] Overflow after Early Global Route 0.00% H + 0.00% V
+Early Global Route congestion estimation runtime: 0.02 seconds, mem = 1636.1M
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+
+=== incrementalPlace Internal Loop 1 ===
+*** Finished SKP initialization (cpu=0:00:00.0, real=0:00:00.0)***
+Iteration  4: Total net bbox = 1.684e+02 (6.02e+01 1.08e+02)
+              Est.  stn bbox = 1.875e+02 (7.06e+01 1.17e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1612.5M
+Iteration  5: Total net bbox = 2.034e+02 (8.16e+01 1.22e+02)
+              Est.  stn bbox = 2.237e+02 (9.30e+01 1.31e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1612.5M
+Iteration  6: Total net bbox = 2.001e+02 (8.28e+01 1.17e+02)
+              Est.  stn bbox = 2.204e+02 (9.41e+01 1.26e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1612.5M
+Move report: Timing Driven Placement moves 23 insts, mean move: 1.45 um, max move: 3.45 um 
+	Max move on inst (g277): (9.60, 10.26) --> (7.84, 11.96)
+
+Finished Incremental Placement (cpu=0:00:00.1, real=0:00:00.0, mem=1612.5M)
+**WARN: (IMPSP-9025):	No scan chain specified/traced.
+Type 'man IMPSP-9025' for more detail.
+*** Starting refinePlace (1:00:28 mem=1613.3M) ***
+Total net bbox length = 2.144e+02 (9.711e+01 1.173e+02) (ext = 7.363e+01)
+Move report: Detail placement moves 23 insts, mean move: 0.35 um, max move: 2.44 um 
+	Max move on inst (g275__2802): (9.03, 8.56) --> (6.60, 8.55)
+	Runtime: CPU: 0:00:00.0 REAL: 0:00:00.0 MEM: 1613.3MB
+Summary Report:
+Instances move: 23 (out of 23 movable)
+Instances flipped: 0
+Mean displacement: 0.35 um
+Max displacement: 2.44 um (Instance: g275__2802) (9.031, 8.5635) -> (6.6, 8.55)
+	Length: 3 sites, height: 1 rows, site name: CoreSite, cell type: NAND2X1
+Total net bbox length = 2.157e+02 (9.560e+01 1.201e+02) (ext = 7.175e+01)
+Runtime: CPU: 0:00:00.0 REAL: 0:00:00.0 MEM: 1613.3MB
+*** Finished refinePlace (1:00:28 mem=1613.3M) ***
+[NR-eGR] Track table information for default rule: 
+[NR-eGR] Metal1 has no routable track
+[NR-eGR] Metal2 has single uniform track structure
+[NR-eGR] Metal3 has single uniform track structure
+[NR-eGR] Metal4 has single uniform track structure
+[NR-eGR] Metal5 has single uniform track structure
+[NR-eGR] Metal6 has single uniform track structure
+[NR-eGR] Metal7 has single uniform track structure
+[NR-eGR] Metal8 has single uniform track structure
+[NR-eGR] Metal9 has single uniform track structure
+[NR-eGR] Metal10 has single uniform track structure
+[NR-eGR] Metal11 has single uniform track structure
+[NR-eGR] Read 452 PG shapes
+[NR-eGR] Read 0 clock shapes
+[NR-eGR] Read 0 other shapes
+[NR-eGR] #Routing Blockages  : 0
+[NR-eGR] #Instance Blockages : 0
+[NR-eGR] #PG Blockages       : 452
+[NR-eGR] #Halo Blockages     : 0
+[NR-eGR] #Boundary Blockages : 0
+[NR-eGR] #Clock Blockages    : 0
+[NR-eGR] #Other Blockages    : 0
+[NR-eGR] Num Prerouted Nets = 0  Num Prerouted Wires = 0
+[NR-eGR] Read 26 nets ( ignored 0 )
+[NR-eGR] There are 1 clock nets ( 0 with NDR ).
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id: 0  Nets: 26
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 26 net(s) in layer range [2, 11]
+[NR-eGR] Early Global Route overflow of layer group 1: 0.00% H + 0.00% V. EstWL: 2.205900e+02um
+[NR-eGR] Congestion Analysis By layer: (blocked Gcells are excluded) 
+[NR-eGR]                        OverCon            
+[NR-eGR]                         #Gcell     %Gcell
+[NR-eGR]        Layer             (1-0)    OverCon
+[NR-eGR] ----------------------------------------------
+[NR-eGR]  Metal1 ( 1)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal2 ( 2)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal3 ( 3)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal4 ( 4)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal5 ( 5)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal6 ( 6)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal7 ( 7)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal8 ( 8)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal9 ( 9)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal10 (10)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal11 (11)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] ----------------------------------------------
+[NR-eGR]        Total         0( 0.00%)   ( 0.00%) 
+[NR-eGR] 
+[NR-eGR] Overflow after Early Global Route 0.00% H + 0.00% V
+Early Global Route congestion estimation runtime: 0.01 seconds, mem = 1611.3M
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+[NR-eGR]                  Length (um)  Vias 
+[NR-eGR] -----------------------------------
+[NR-eGR]  Metal1   (1H)             0    93 
+[NR-eGR]  Metal2   (2V)           148   141 
+[NR-eGR]  Metal3   (3H)           112     0 
+[NR-eGR]  Metal4   (4V)             0     0 
+[NR-eGR]  Metal5   (5H)             0     0 
+[NR-eGR]  Metal6   (6V)             0     0 
+[NR-eGR]  Metal7   (7H)             0     0 
+[NR-eGR]  Metal8   (8V)             0     0 
+[NR-eGR]  Metal9   (9H)             0     0 
+[NR-eGR]  Metal10  (10V)            0     0 
+[NR-eGR]  Metal11  (11H)            0     0 
+[NR-eGR] -----------------------------------
+[NR-eGR]           Total          260   234 
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total half perimeter of net bounding box: 216um
+[NR-eGR] Total length: 260um, number of vias: 234
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total eGR-routed clock nets wire length: 31um, number of vias: 25
+[NR-eGR] --------------------------------------------------------------------------
+Early Global Route wiring runtime: 0.00 seconds, mem = 1611.3M
+0 delay mode for cte disabled.
+
+*** Finished incrementalPlace (cpu=0:00:00.2, real=0:00:00.0)***
+Start to check current routing status for nets...
+All nets are already routed correctly.
+End to check current routing status for nets (mem=1603.3M)
+Extraction called for design 'counter' of instances=23 and nets=28 using extraction engine 'preRoute' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+PreRoute RC Extraction called for design counter.
+RC Extraction called in multi-corner(1) mode.
+RCMode: PreRoute
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 0.90000
+PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Using capacitance table file ...
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+PreRoute RC Extraction DONE (CPU Time: 0:00:00.0  Real Time: 0:00:00.0  MEM: 1603.277M)
+Compute RC Scale Done ...
+**optDesign ... cpu = 0:00:04, real = 0:00:04, mem = 1301.2M, totSessionCpu=1:00:28 **
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: counter
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (1 T). (MEM=1599.38)
+Total number of fetched objects 26
+End delay calculation. (MEM=1626.58 CPU=0:00:00.0 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1626.58 CPU=0:00:00.0 REAL=0:00:00.0)
+*** IncrReplace #1 [finish] : cpu/real = 0:00:00.3/0:00:00.3 (1.0), totSession cpu/real = 1:00:28.3/4:50:01.3 (0.2), mem = 1626.6M
+*** Timing NOT met, worst failing slack is -0.035
+*** Check timing (0:00:00.0)
+Begin: GigaOpt Optimization in WNS mode
+Info: 1 clock net  excluded from IPO operation.
+*** WnsOpt #1 [begin] : totSession cpu/real = 1:00:28.4/4:50:01.3 (0.2), mem = 1642.6M
+*info: 1 clock net excluded
+*info: 2 special nets excluded.
+*info: 2 no-driver nets excluded.
+** GigaOpt Optimizer WNS Slack -0.035 TNS Slack -0.048 Density 71.11
+OptDebug: Start of Optimizer WNS Pass 0:
++----------+------+------+
+|Path Group|   WNS|   TNS|
++----------+------+------+
+|default   | 0.628| 0.000|
+|reg2reg   |-0.035|-0.048|
+|HEPG      |-0.035|-0.048|
+|All Paths |-0.035|-0.048|
++----------+------+------+
+
+Active Path Group: reg2reg  
++--------+---------+--------+---------+---------+------------+--------+----------+---------+-----------------+
+|  WNS   | All WNS |  TNS   | All TNS | Density |    Real    |  Mem   |Worst View|Pathgroup|    End Point    |
++--------+---------+--------+---------+---------+------------+--------+----------+---------+-----------------+
+|  -0.035|   -0.035|  -0.048|   -0.048|   71.11%|   0:00:00.0| 1712.8M|     setup|  reg2reg| count_reg[6]/D  |
+|   0.019|    0.019|   0.000|    0.000|   75.56%|   0:00:00.0| 1739.8M|     setup|  reg2reg| count_reg[6]/D  |
+|   0.043|    0.043|   0.000|    0.000|   75.87%|   0:00:00.0| 1739.8M|     setup|  reg2reg| count_reg[7]/D  |
+|   0.043|    0.043|   0.000|    0.000|   75.87%|   0:00:00.0| 1739.8M|     setup|  reg2reg| count_reg[7]/D  |
++--------+---------+--------+---------+---------+------------+--------+----------+---------+-----------------+
+
+*** Finish Core Optimize Step (cpu=0:00:00.1 real=0:00:00.0 mem=1739.8M) ***
+
+*** Finished Optimize Step Cumulative (cpu=0:00:00.1 real=0:00:00.0 mem=1739.8M) ***
+OptDebug: End of Optimizer WNS Pass 0:
++----------+-----+-----+
+|Path Group|  WNS|  TNS|
++----------+-----+-----+
+|default   |0.637|0.000|
+|reg2reg   |0.043|0.000|
+|HEPG      |0.043|0.000|
+|All Paths |0.043|0.000|
++----------+-----+-----+
+
+** GigaOpt Optimizer WNS Slack 0.043 TNS Slack 0.000 Density 75.87
+Begin: Area Reclaim Optimization
+*** AreaOpt #2 [begin] : totSession cpu/real = 1:00:29.2/4:50:02.1 (0.2), mem = 1739.8M
+Reclaim Optimization WNS Slack 0.000  TNS Slack 0.000 Density 75.87
++---------+---------+--------+--------+------------+--------+
+| Density | Commits |  WNS   |  TNS   |    Real    |  Mem   |
++---------+---------+--------+--------+------------+--------+
+|   75.87%|        -|   0.000|   0.000|   0:00:00.0| 1739.8M|
+|   75.87%|        0|   0.000|   0.000|   0:00:00.0| 1739.8M|
+|   75.87%|        0|   0.000|   0.000|   0:00:00.0| 1739.8M|
++---------+---------+--------+--------+------------+--------+
+Reclaim Optimization End WNS Slack 0.000  TNS Slack 0.000 Density 75.87
+Bottom Preferred Layer:
+    None
+Via Pillar Rule:
+    None
+End: Core Area Reclaim Optimization (cpu = 0:00:00.1) (real = 0:00:00.0) **
+*** AreaOpt #2 [finish] : cpu/real = 0:00:00.1/0:00:00.1 (1.1), totSession cpu/real = 1:00:29.3/4:50:02.2 (0.2), mem = 1739.8M
+End: Area Reclaim Optimization (cpu=0:00:00, real=0:00:00, mem=1730.83M, totSessionCpu=1:00:29).
+*** Starting refinePlace (1:00:29 mem=1731.8M) ***
+Total net bbox length = 2.182e+02 (9.747e+01 1.207e+02) (ext = 7.277e+01)
+
+Starting Small incrNP...
+Skipped incrNP (cpu=0:00:00.0, real=0:00:00.0, mem=1731.8M)
+End of Small incrNP (cpu=0:00:00.0, real=0:00:00.0)
+Move report: Detail placement moves 6 insts, mean move: 0.40 um, max move: 0.80 um 
+	Max move on inst (g278__5122): (6.20, 11.97) --> (7.00, 11.97)
+	Runtime: CPU: 0:00:00.0 REAL: 0:00:00.0 MEM: 1731.8MB
+Summary Report:
+Instances move: 6 (out of 24 movable)
+Instances flipped: 0
+Mean displacement: 0.40 um
+Max displacement: 0.80 um (Instance: g278__5122) (6.2, 11.97) -> (7, 11.97)
+	Length: 6 sites, height: 1 rows, site name: CoreSite, cell type: OA21X1
+Total net bbox length = 2.177e+02 (9.703e+01 1.207e+02) (ext = 7.256e+01)
+Runtime: CPU: 0:00:00.0 REAL: 0:00:00.0 MEM: 1731.8MB
+*** Finished refinePlace (1:00:29 mem=1731.8M) ***
+*** maximum move = 0.80 um ***
+*** Finished re-routing un-routed nets (1731.8M) ***
+
+*** Finish Physical Update (cpu=0:00:00.0 real=0:00:00.0 mem=1731.8M) ***
+** GigaOpt Optimizer WNS Slack 0.043 TNS Slack 0.000 Density 75.87
+OptDebug: End of Setup Fixing:
++----------+-----+-----+
+|Path Group|  WNS|  TNS|
++----------+-----+-----+
+|default   |0.637|0.000|
+|reg2reg   |0.043|0.000|
+|HEPG      |0.043|0.000|
+|All Paths |0.043|0.000|
++----------+-----+-----+
+
+Bottom Preferred Layer:
+    None
+Via Pillar Rule:
+    None
+
+*** Finish pre-CTS Setup Fixing (cpu=0:00:00.3 real=0:00:00.0 mem=1731.8M) ***
+
+*** WnsOpt #1 [finish] : cpu/real = 0:00:01.0/0:00:01.0 (1.0), totSession cpu/real = 1:00:29.3/4:50:02.3 (0.2), mem = 1637.7M
+End: GigaOpt Optimization in WNS mode
+*** Timing Is met
+*** Check timing (0:00:00.0)
+Info: 1 clock net  excluded from IPO operation.
+Begin: Area Reclaim Optimization
+*** AreaOpt #3 [begin] : totSession cpu/real = 1:00:29.3/4:50:02.3 (0.2), mem = 1695.0M
+Reclaim Optimization WNS Slack 0.000  TNS Slack 0.000 Density 75.87
++---------+---------+--------+--------+------------+--------+
+| Density | Commits |  WNS   |  TNS   |    Real    |  Mem   |
++---------+---------+--------+--------+------------+--------+
+|   75.87%|        -|   0.000|   0.000|   0:00:00.0| 1695.0M|
+|   75.87%|        0|   0.000|   0.000|   0:00:00.0| 1695.0M|
+|   75.87%|        0|   0.000|   0.000|   0:00:00.0| 1695.0M|
+|   73.02%|        3|   0.000|   0.000|   0:00:00.0| 1716.1M|
+|   73.02%|        0|   0.000|   0.000|   0:00:00.0| 1716.1M|
+|   73.02%|        0|   0.000|   0.000|   0:00:00.0| 1716.1M|
++---------+---------+--------+--------+------------+--------+
+Reclaim Optimization End WNS Slack 0.000  TNS Slack 0.000 Density 73.02
+Bottom Preferred Layer:
+    None
+Via Pillar Rule:
+    None
+End: Core Area Reclaim Optimization (cpu = 0:00:00.1) (real = 0:00:00.0) **
+*** Starting refinePlace (1:00:30 mem=1716.1M) ***
+Total net bbox length = 2.160e+02 (9.594e+01 1.201e+02) (ext = 7.170e+01)
+Move report: Detail placement moves 0 insts, mean move: 0.00 um, max move: 0.00 um 
+	Runtime: CPU: 0:00:00.0 REAL: 0:00:00.0 MEM: 1716.1MB
+Summary Report:
+Instances move: 0 (out of 24 movable)
+Instances flipped: 0
+Mean displacement: 0.00 um
+Max displacement: 0.00 um 
+Total net bbox length = 2.160e+02 (9.594e+01 1.201e+02) (ext = 7.170e+01)
+Runtime: CPU: 0:00:00.0 REAL: 0:00:00.0 MEM: 1716.1MB
+*** Finished refinePlace (1:00:30 mem=1716.1M) ***
+*** maximum move = 0.00 um ***
+*** Finished re-routing un-routed nets (1716.1M) ***
+
+*** Finish Physical Update (cpu=0:00:00.0 real=0:00:00.0 mem=1716.1M) ***
+*** AreaOpt #3 [finish] : cpu/real = 0:00:00.2/0:00:00.2 (1.0), totSession cpu/real = 1:00:29.5/4:50:02.5 (0.2), mem = 1716.1M
+End: Area Reclaim Optimization (cpu=0:00:00, real=0:00:00, mem=1639.98M, totSessionCpu=1:00:30).
+Begin: GigaOpt postEco DRV Optimization
+*** DrvOpt #1 [begin] : totSession cpu/real = 1:00:29.6/4:50:02.5 (0.2), mem = 1640.0M
+Info: 1 clock net  excluded from IPO operation.
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        max-tran       |        max-cap        |  max-fanout |  max-length |       setup       |        |        |        |       |          |         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| nets | terms|  wViol  | nets | terms|  wViol  | nets | terms| nets | terms|   WNS   |   TNS   |  #Buf  |  #Inv  | #Resize|Density|   Real   |   Mem   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|     0|     0|     0.00|     0|     0|     0.00|     0|     0|     0|     0|     0.01|     0.00|       0|       0|       0| 73.02%|          |         |
+|     0|     0|     0.00|     0|     0|     0.00|     0|     0|     0|     0|     0.01|     0.00|       0|       0|       0| 73.02%| 0:00:00.0|  1697.2M|
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+Bottom Preferred Layer:
+    None
+Via Pillar Rule:
+    None
+
+*** Finish DRV Fixing (cpu=0:00:00.0 real=0:00:00.0 mem=1697.2M) ***
+
+*** DrvOpt #1 [finish] : cpu/real = 0:00:00.2/0:00:00.2 (1.0), totSession cpu/real = 1:00:29.7/4:50:02.7 (0.2), mem = 1640.1M
+End: GigaOpt postEco DRV Optimization
+Register exp ratio and priority group on 0 nets on 27 nets : 
+
+Active setup views:
+ setup
+  Dominating endpoints: 0
+  Dominating TNS: -0.000
+
+Extraction called for design 'counter' of instances=24 and nets=29 using extraction engine 'preRoute' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+PreRoute RC Extraction called for design counter.
+RC Extraction called in multi-corner(1) mode.
+RCMode: PreRoute
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 0.90000
+PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Using capacitance table file ...
+Skipped RC grid update for preRoute extraction.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+PreRoute RC Extraction DONE (CPU Time: 0:00:00.0  Real Time: 0:00:00.0  MEM: 1621.773M)
+Skewing Data Summary (End_of_FINAL)
+--------------------------------------------------
+ Total skewed count:0
+--------------------------------------------------
+Starting delay calculation for Setup views
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: counter
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (1 T). (MEM=1619.3)
+Total number of fetched objects 27
+End delay calculation. (MEM=1646.51 CPU=0:00:00.0 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1646.51 CPU=0:00:00.0 REAL=0:00:00.0)
+*** Done Building Timing Graph (cpu=0:00:00.0 real=0:00:00.0 totSessionCpu=1:00:30 mem=1646.5M)
+[NR-eGR] Track table information for default rule: 
+[NR-eGR] Metal1 has no routable track
+[NR-eGR] Metal2 has single uniform track structure
+[NR-eGR] Metal3 has single uniform track structure
+[NR-eGR] Metal4 has single uniform track structure
+[NR-eGR] Metal5 has single uniform track structure
+[NR-eGR] Metal6 has single uniform track structure
+[NR-eGR] Metal7 has single uniform track structure
+[NR-eGR] Metal8 has single uniform track structure
+[NR-eGR] Metal9 has single uniform track structure
+[NR-eGR] Metal10 has single uniform track structure
+[NR-eGR] Metal11 has single uniform track structure
+[NR-eGR] Read 452 PG shapes
+[NR-eGR] Read 0 clock shapes
+[NR-eGR] Read 0 other shapes
+[NR-eGR] #Routing Blockages  : 0
+[NR-eGR] #Instance Blockages : 0
+[NR-eGR] #PG Blockages       : 452
+[NR-eGR] #Halo Blockages     : 0
+[NR-eGR] #Boundary Blockages : 0
+[NR-eGR] #Clock Blockages    : 0
+[NR-eGR] #Other Blockages    : 0
+[NR-eGR] Num Prerouted Nets = 0  Num Prerouted Wires = 0
+[NR-eGR] Read 27 nets ( ignored 0 )
+[NR-eGR] There are 1 clock nets ( 0 with NDR ).
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id: 0  Nets: 27
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 27 net(s) in layer range [2, 11]
+[NR-eGR] Early Global Route overflow of layer group 1: 0.00% H + 0.00% V. EstWL: 2.223000e+02um
+[NR-eGR] Congestion Analysis By layer: (blocked Gcells are excluded) 
+[NR-eGR]                        OverCon            
+[NR-eGR]                         #Gcell     %Gcell
+[NR-eGR]        Layer             (1-0)    OverCon
+[NR-eGR] ----------------------------------------------
+[NR-eGR]  Metal1 ( 1)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal2 ( 2)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal3 ( 3)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal4 ( 4)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal5 ( 5)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal6 ( 6)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal7 ( 7)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal8 ( 8)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal9 ( 9)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal10 (10)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal11 (11)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] ----------------------------------------------
+[NR-eGR]        Total         0( 0.00%)   ( 0.00%) 
+[NR-eGR] 
+[NR-eGR] Overflow after Early Global Route 0.00% H + 0.00% V
+[NR-eGR] Finished Early Global Route kernel ( CPU: 0.02 sec, Real: 0.02 sec, Curr Mem: 1654.51 MB )
+[hotspot] +------------+---------------+---------------+
+[hotspot] |            |   max hotspot | total hotspot |
+[hotspot] +------------+---------------+---------------+
+[hotspot] | normalized |          0.00 |          0.00 |
+[hotspot] +------------+---------------+---------------+
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+[hotspot] Hotspot report including placement blocked areas
+[hotspot] +------------+---------------+---------------+
+[hotspot] |            |   max hotspot | total hotspot |
+[hotspot] +------------+---------------+---------------+
+[hotspot] | normalized |          0.00 |          0.00 |
+[hotspot] +------------+---------------+---------------+
+Local HotSpot Analysis (blockage included): normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+Reported timing to dir ./timingReports
+**optDesign ... cpu = 0:00:06, real = 0:00:06, mem = 1347.7M, totSessionCpu=1:00:30 **
+
+------------------------------------------------------------------
+     optDesign Final Summary
+------------------------------------------------------------------
+
+Setup views included:
+ setup 
+
++--------------------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):|  0.010  |  0.010  |  0.628  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |
+|          All Paths:|   24    |    8    |   16    |
++--------------------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 73.016%
+Routing Overflow: 0.00% H and 0.00% V
+------------------------------------------------------------------
+**optDesign ... cpu = 0:00:06, real = 0:00:07, mem = 1349.0M, totSessionCpu=1:00:30 **
+**WARN: (IMPOPT-3195):	Analysis mode has changed.
+Type 'man IMPOPT-3195' for more detail.
+*** Finished optDesign ***
+Disable CTE adjustment.
+**place_opt_design ... cpu = 0:00:06, real = 0:00:07, mem = 1540.9M **
+*** Finished GigaPlace ***
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPEXT-3530          3  The process node is not set. Use the com...
+WARNING   IMPSP-9025           1  No scan chain specified/traced.          
+WARNING   IMPOPT-3195          2  Analysis mode has changed.               
+*** Message Summary: 6 warning(s), 0 error(s)
+
+*** place_opt_design #1 [finish] : cpu/real = 0:00:06.0/0:00:06.7 (0.9), totSession cpu/real = 1:00:30.0/4:50:03.6 (0.2), mem = 1540.9M
+<CMD> report_timing
+Path 1: MET Setup Check with Pin count_reg[6]/CK 
+Endpoint:   count_reg[6]/D (^) checked with  leading edge of 'clk'
+Beginpoint: count_reg[0]/Q (^) triggered by  leading edge of 'clk'
+Path Groups: {clk}
+Analysis View: setup
+Other End Arrival Time          0.000
+- Setup                         0.133
++ Phase Shift                   1.000
+- Uncertainty                   0.010
+= Required Time                 0.857
+- Arrival Time                  0.847
+= Slack Time                    0.010
+     Clock Rise Edge                 0.000
+     + Clock Network Latency (Ideal) 0.000
+     = Beginpoint Arrival Time       0.000
+     +---------------------------------------------------------------------+ 
+     |   Instance   |     Arc     |   Cell    | Delay | Arrival | Required | 
+     |              |             |           |       |  Time   |   Time   | 
+     |--------------+-------------+-----------+-------+---------+----------| 
+     | count_reg[0] | CK ^        |           |       |   0.000 |    0.010 | 
+     | count_reg[0] | CK ^ -> Q ^ | DFFRX1    | 0.321 |   0.321 |    0.331 | 
+     | g281__7098   | B ^ -> Y v  | NAND2X2   | 0.096 |   0.418 |    0.427 | 
+     | g276__1705   | B v -> Y ^  | NOR2X2    | 0.089 |   0.507 |    0.516 | 
+     | g271__1617   | B ^ -> Y ^  | CLKAND2X2 | 0.126 |   0.633 |    0.642 | 
+     | g267__4319   | B ^ -> Y v  | NAND2X1   | 0.097 |   0.730 |    0.739 | 
+     | FE_RC_0_0    | A1 v -> Y ^ | OAI21X1   | 0.117 |   0.847 |    0.857 | 
+     | count_reg[6] | D ^         | DFFRHQX1  | 0.000 |   0.847 |    0.857 | 
+     +---------------------------------------------------------------------+ 
+
+<CMD> timeDesign -preCTS
+*** timeDesign #1 [begin] : totSession cpu/real = 1:00:41.2/4:50:59.5 (0.2), mem = 1545.6M
+Start to check current routing status for nets...
+All nets are already routed correctly.
+End to check current routing status for nets (mem=1541.6M)
+
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Setup views included:
+ setup 
+
++--------------------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):|  0.010  |  0.010  |  0.628  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |
+|          All Paths:|   24    |    8    |   16    |
++--------------------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 73.016%
+Routing Overflow: 0.00% H and 0.00% V
+------------------------------------------------------------------
+Reported timing to dir ./timingReports
+Total CPU time: 0.12 sec
+Total Real time: 1.0 sec
+Total Memory Usage: 1557.816406 Mbytes
+*** timeDesign #1 [finish] : cpu/real = 0:00:00.1/0:00:00.8 (0.1), totSession cpu/real = 1:00:41.3/4:51:00.3 (0.2), mem = 1557.8M
+<CMD> get_verify_drc_mode -disable_rules -quiet
+<CMD> get_verify_drc_mode -quiet -area
+<CMD> get_verify_drc_mode -quiet -layer_range
+<CMD> get_verify_drc_mode -check_ndr_spacing -quiet
+<CMD> get_verify_drc_mode -check_only -quiet
+<CMD> get_verify_drc_mode -check_same_via_cell -quiet
+<CMD> get_verify_drc_mode -exclude_pg_net -quiet
+<CMD> get_verify_drc_mode -ignore_trial_route -quiet
+<CMD> get_verify_drc_mode -max_wrong_way_halo -quiet
+<CMD> get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+<CMD> get_verify_drc_mode -limit -quiet
+<CMD> set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report counter.drc.rpt -limit 1000
+<CMD> verify_drc
+#-check_ndr_spacing auto                 # enums={true false auto}, default=auto,  user setting
+#-check_same_via_cell true               # bool, default=false, user setting
+#-report counter.drc.rpt                 # string, default="", user setting
+ *** Starting Verify DRC (MEM: 1562.5) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+
+  Verification Complete : 239 Viols.
+
+ Violation Summary By Layer and Type:
+
+	         MetSpc    Short      Mar outOfDie   EOLSpc   CutSpc   AdjCut   Others   Totals
+	Metal1       35       21       16       10        7        0        0        1       90
+	Via1          0        0        0        0        0        2        0        0        2
+	Metal2       30       31       30       10        5        0        0        1      107
+	Via2          0        0        0        0        0        5        5        3       13
+	Metal3       15        8        1        0        3        0        0        0       27
+	Totals       80       60       47       20       15        7        5        5      239
+
+ *** End Verify DRC (CPU: 0:00:00.0  ELAPSED TIME: 1.00  MEM: 0.0M) ***
+
+<CMD> set_verify_drc_mode -area {0 0 0 0}
+<CMD> get_verify_drc_mode -disable_rules -quiet
+<CMD> get_verify_drc_mode -quiet -area
+<CMD> get_verify_drc_mode -quiet -layer_range
+<CMD> get_verify_drc_mode -check_ndr_spacing -quiet
+<CMD> get_verify_drc_mode -check_only -quiet
+<CMD> get_verify_drc_mode -check_same_via_cell -quiet
+<CMD> get_verify_drc_mode -exclude_pg_net -quiet
+<CMD> get_verify_drc_mode -ignore_trial_route -quiet
+<CMD> get_verify_drc_mode -max_wrong_way_halo -quiet
+<CMD> get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+<CMD> get_verify_drc_mode -limit -quiet
+<CMD> set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report counter.drc.rpt -limit 1000
+<CMD> verify_drc
+#-check_ndr_spacing auto                 # enums={true false auto}, default=auto,  user setting
+#-check_same_via_cell true               # bool, default=false, user setting
+#-report counter.drc.rpt                 # string, default="", user setting
+ *** Starting Verify DRC (MEM: 1562.5) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+
+  Verification Complete : 239 Viols.
+
+ Violation Summary By Layer and Type:
+
+	         MetSpc    Short      Mar outOfDie   EOLSpc   CutSpc   AdjCut   Others   Totals
+	Metal1       35       21       16       10        7        0        0        1       90
+	Via1          0        0        0        0        0        2        0        0        2
+	Metal2       30       31       30       10        5        0        0        1      107
+	Via2          0        0        0        0        0        5        5        3       13
+	Metal3       15        8        1        0        3        0        0        0       27
+	Totals       80       60       47       20       15        7        5        5      239
+
+ *** End Verify DRC (CPU: 0:00:00.0  ELAPSED TIME: 0.00  MEM: 0.0M) ***
+
+<CMD> set_verify_drc_mode -area {0 0 0 0}
+<CMD> setRouteMode -earlyGlobalHonorMsvRouteConstraint false -earlyGlobalRoutePartitionPinGuide true
+<CMD> setEndCapMode -reset
+<CMD> setEndCapMode -boundary_tap false
+<CMD> setNanoRouteMode -quiet -droutePostRouteSpreadWire 1
+<CMD> setNanoRouteMode -quiet -droutePostRouteWidenWireRule LEFSpecialRouteSpec
+<CMD> setNanoRouteMode -quiet -timingEngine {}
+<CMD> setUsefulSkewMode -maxSkew false -noBoundary false -useCells {DLY4X4 DLY4X1 DLY3X4 DLY3X1 DLY2X4 DLY2X1 DLY1X4 DLY1X1 CLKBUFX8 CLKBUFX6 CLKBUFX4 CLKBUFX3 CLKBUFX20 CLKBUFX2 CLKBUFX16 CLKBUFX12 BUFX8 BUFX6 BUFX4 BUFX3 BUFX20 BUFX2 BUFX16 BUFX12 INVXL INVX8 INVX6 INVX4 INVX3 INVX20 INVX2 INVX16 INVX12 INVX1 CLKINVX8 CLKINVX6 CLKINVX4 CLKINVX3 CLKINVX20 CLKINVX2 CLKINVX16 CLKINVX12 CLKINVX1} -maxAllowedDelay 1
+<CMD> setPlaceMode -reset
+<CMD> setPlaceMode -congEffort high -timingDriven 1 -clkGateAware 1 -powerDriven 0 -ignoreScan 1 -reorderScan 1 -ignoreSpare 0 -placeIOPins 0 -moduleAwareSpare 0 -preserveRouting 1 -rmAffectedRouting 0 -checkRoute 0 -swapEEQ 0
+<CMD> setRouteMode -earlyGlobalHonorMsvRouteConstraint false -earlyGlobalRoutePartitionPinGuide true
+<CMD> setEndCapMode -reset
+<CMD> setEndCapMode -boundary_tap false
+<CMD> setUsefulSkewMode -maxSkew false -noBoundary false -useCells {DLY4X4 DLY4X1 DLY3X4 DLY3X1 DLY2X4 DLY2X1 DLY1X4 DLY1X1 CLKBUFX8 CLKBUFX6 CLKBUFX4 CLKBUFX3 CLKBUFX20 CLKBUFX2 CLKBUFX16 CLKBUFX12 BUFX8 BUFX6 BUFX4 BUFX3 BUFX20 BUFX2 BUFX16 BUFX12 INVXL INVX8 INVX6 INVX4 INVX3 INVX20 INVX2 INVX16 INVX12 INVX1 CLKINVX8 CLKINVX6 CLKINVX4 CLKINVX3 CLKINVX20 CLKINVX2 CLKINVX16 CLKINVX12 CLKINVX1} -maxAllowedDelay 1
+<CMD> setPlaceMode -fp false
+<CMD> place_design
+**WARN: (IMPEXT-3493):	The design extraction status has been reset by set_analysis_view/update_rc_corner or setExtractRCMode  command. The parasitic data can be regenerated either by extracting the design using the extractRC command or by loading the SPEF or RCDB file(s). To prevent resetting of the extraction status, avoid changing extraction modes.
+Type 'man IMPEXT-3493' for more detail.
+*** Starting placeDesign default flow ***
+*** Start deleteBufferTree ***
+Info: Detect buffers to remove automatically.
+Analyzing netlist ...
+Updating netlist
+
+*summary: 0 instances (buffers/inverters) removed
+*** Finish deleteBufferTree (0:00:00.0) ***
+**INFO: Enable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+**INFO: Analyzing IO path groups for slack adjustment
+Effort level <high> specified for reg2reg_tmp.27127 path_group
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: counter
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (1 T). (MEM=1539.03)
+Total number of fetched objects 27
+End delay calculation. (MEM=1558.96 CPU=0:00:00.0 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1558.96 CPU=0:00:00.0 REAL=0:00:00.0)
+**INFO: Disable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+**INFO: Pre-place timing setting for timing analysis already disabled
+Deleted 0 physical inst  (cell - / prefix -).
+INFO: #ExclusiveGroups=0
+INFO: There are no Exclusive Groups.
+*** Starting "NanoPlace(TM) placement v#2 (mem=1549.4M)" ...
+*** Build Buffered Sizing Timing Model
+(cpu=0:00:00.9 mem=1557.5M) ***
+*** Build Virtual Sizing Timing Model
+(cpu=0:00:00.9 mem=1557.5M) ***
+No user-set net weight.
+Net fanout histogram:
+2		: 11 (40.7%) nets
+3		: 3 (11.1%) nets
+4     -	14	: 13 (48.1%) nets
+15    -	39	: 0 (0.0%) nets
+40    -	79	: 0 (0.0%) nets
+80    -	159	: 0 (0.0%) nets
+160   -	319	: 0 (0.0%) nets
+320   -	639	: 0 (0.0%) nets
+640   -	1279	: 0 (0.0%) nets
+1280  -	2559	: 0 (0.0%) nets
+2560  -	5119	: 0 (0.0%) nets
+5120+		: 0 (0.0%) nets
+Options: timingDriven clkGateAware ignoreScan pinGuide congEffort=high gpeffort=medium 
+**WARN: (IMPSP-9042):	Scan chains were not defined, -place_global_ignore_scan option will be ignored.
+Define the scan chains before using this option.
+Type 'man IMPSP-9042' for more detail.
+#std cell=24 (0 fixed + 24 movable) #buf cell=0 #inv cell=1 #block=0 (0 floating + 0 preplaced)
+#ioInst=0 #net=27 #term=97 #term/net=3.59, #fixedIo=0, #floatIo=0, #fixedPin=0, #floatPin=10
+stdCell: 24 single + 0 double + 0 multi
+Total standard cell length = 0.0460 (mm), area = 0.0001 (mm^2)
+Average module density = 0.747.
+Density for the design = 0.747.
+       = stdcell_area 230 sites (79 um^2) / alloc_area 308 sites (105 um^2).
+Pin Density = 0.3079.
+            = total # of pins 97 / total area 315.
+=== lastAutoLevel = 4 
+Clock gating cells determined by native netlist tracing.
+Iteration  1: Total net bbox = 1.747e+02 (8.08e+01 9.39e+01)
+              Est.  stn bbox = 1.912e+02 (9.02e+01 1.01e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1557.0M
+Iteration  2: Total net bbox = 1.747e+02 (8.08e+01 9.39e+01)
+              Est.  stn bbox = 1.912e+02 (9.02e+01 1.01e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1557.0M
+Iteration  3: Total net bbox = 1.486e+02 (6.07e+01 8.79e+01)
+              Est.  stn bbox = 1.655e+02 (7.06e+01 9.49e+01)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1558.4M
+Active setup views:
+    setup
+Iteration  4: Total net bbox = 1.704e+02 (6.42e+01 1.06e+02)
+              Est.  stn bbox = 1.909e+02 (7.50e+01 1.16e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1558.4M
+Iteration  5: Total net bbox = 1.969e+02 (8.09e+01 1.16e+02)
+              Est.  stn bbox = 2.180e+02 (9.27e+01 1.25e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1558.4M
+Iteration  6: Total net bbox = 2.084e+02 (9.26e+01 1.16e+02)
+              Est.  stn bbox = 2.295e+02 (1.04e+02 1.25e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1558.4M
+*** cost = 2.084e+02 (9.26e+01 1.16e+02) (cpu for global=0:00:00.0) real=0:00:00.0***
+Info: 0 clock gating cells identified, 0 (on average) moved 0/1
+Solver runtime cpu: 0:00:00.0 real: 0:00:00.0
+Core Placement runtime cpu: 0:00:00.0 real: 0:00:00.0
+**WARN: (IMPSP-9025):	No scan chain specified/traced.
+Type 'man IMPSP-9025' for more detail.
+*** Starting refinePlace (1:01:39 mem=1558.4M) ***
+Total net bbox length = 2.084e+02 (9.258e+01 1.158e+02) (ext = 7.228e+01)
+Move report: Detail placement moves 24 insts, mean move: 0.75 um, max move: 1.18 um 
+	Max move on inst (g272__6783): (9.01, 7.98) --> (8.40, 8.55)
+	Runtime: CPU: 0:00:00.0 REAL: 0:00:00.0 MEM: 1558.4MB
+Summary Report:
+Instances move: 24 (out of 24 movable)
+Instances flipped: 0
+Mean displacement: 0.75 um
+Max displacement: 1.18 um (Instance: g272__6783) (9.009, 7.9795) -> (8.4, 8.55)
+	Length: 6 sites, height: 1 rows, site name: CoreSite, cell type: OA21X1
+Total net bbox length = 2.179e+02 (9.034e+01 1.276e+02) (ext = 7.099e+01)
+Runtime: CPU: 0:00:00.0 REAL: 0:00:00.0 MEM: 1558.4MB
+*** Finished refinePlace (1:01:39 mem=1558.4M) ***
+*** End of Placement (cpu=0:00:01.1, real=0:00:01.0, mem=1558.4M) ***
+default core: bins with density > 0.750 =  0.00 % ( 0 / 1 )
+Density distribution unevenness ratio = 0.000%
+*** Free Virtual Timing Model ...(mem=1559.4M)
+**INFO: Enable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+**INFO: Analyzing IO path groups for slack adjustment
+Effort level <high> specified for reg2reg_tmp.27127 path_group
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: counter
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (1 T). (MEM=1547.92)
+Total number of fetched objects 27
+End delay calculation. (MEM=1575.12 CPU=0:00:00.0 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1575.12 CPU=0:00:00.0 REAL=0:00:00.0)
+**INFO: Disable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Info: Disable timing driven in postCTS congRepair.
+
+Starting congRepair ...
+[NR-eGR] Track table information for default rule: 
+[NR-eGR] Metal1 has no routable track
+[NR-eGR] Metal2 has single uniform track structure
+[NR-eGR] Metal3 has single uniform track structure
+[NR-eGR] Metal4 has single uniform track structure
+[NR-eGR] Metal5 has single uniform track structure
+[NR-eGR] Metal6 has single uniform track structure
+[NR-eGR] Metal7 has single uniform track structure
+[NR-eGR] Metal8 has single uniform track structure
+[NR-eGR] Metal9 has single uniform track structure
+[NR-eGR] Metal10 has single uniform track structure
+[NR-eGR] Metal11 has single uniform track structure
+[NR-eGR] Read 452 PG shapes
+[NR-eGR] Read 0 clock shapes
+[NR-eGR] Read 0 other shapes
+[NR-eGR] #Routing Blockages  : 0
+[NR-eGR] #Instance Blockages : 0
+[NR-eGR] #PG Blockages       : 452
+[NR-eGR] #Halo Blockages     : 0
+[NR-eGR] #Boundary Blockages : 0
+[NR-eGR] #Clock Blockages    : 0
+[NR-eGR] #Other Blockages    : 0
+[NR-eGR] Num Prerouted Nets = 0  Num Prerouted Wires = 0
+[NR-eGR] Read 27 nets ( ignored 0 )
+[NR-eGR] There are 1 clock nets ( 0 with NDR ).
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id: 0  Nets: 27
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 27 net(s) in layer range [2, 11]
+[NR-eGR] Early Global Route overflow of layer group 1: 0.00% H + 0.00% V. EstWL: 2.205900e+02um
+[NR-eGR] Congestion Analysis By layer: (blocked Gcells are excluded) 
+[NR-eGR]                        OverCon            
+[NR-eGR]                         #Gcell     %Gcell
+[NR-eGR]        Layer             (1-0)    OverCon
+[NR-eGR] ----------------------------------------------
+[NR-eGR]  Metal1 ( 1)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal2 ( 2)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal3 ( 3)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal4 ( 4)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal5 ( 5)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal6 ( 6)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal7 ( 7)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal8 ( 8)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal9 ( 9)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal10 (10)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal11 (11)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] ----------------------------------------------
+[NR-eGR]        Total         0( 0.00%)   ( 0.00%) 
+[NR-eGR] 
+[NR-eGR] Overflow after Early Global Route 0.00% H + 0.00% V
+Early Global Route congestion estimation runtime: 0.01 seconds, mem = 1573.6M
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+Skipped repairing congestion.
+[NR-eGR]                  Length (um)  Vias 
+[NR-eGR] -----------------------------------
+[NR-eGR]  Metal1   (1H)             0    97 
+[NR-eGR]  Metal2   (2V)           146   157 
+[NR-eGR]  Metal3   (3H)           118     2 
+[NR-eGR]  Metal4   (4V)             4     0 
+[NR-eGR]  Metal5   (5H)             0     0 
+[NR-eGR]  Metal6   (6V)             0     0 
+[NR-eGR]  Metal7   (7H)             0     0 
+[NR-eGR]  Metal8   (8V)             0     0 
+[NR-eGR]  Metal9   (9H)             0     0 
+[NR-eGR]  Metal10  (10V)            0     0 
+[NR-eGR]  Metal11  (11H)            0     0 
+[NR-eGR] -----------------------------------
+[NR-eGR]           Total          268   256 
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total half perimeter of net bounding box: 218um
+[NR-eGR] Total length: 268um, number of vias: 256
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total eGR-routed clock nets wire length: 28um, number of vias: 26
+[NR-eGR] --------------------------------------------------------------------------
+Early Global Route wiring runtime: 0.00 seconds, mem = 1516.6M
+Tdgp not successfully inited but do clear! skip clearing
+End of congRepair (cpu=0:00:00.0, real=0:00:00.0)
+*** Finishing placeDesign default flow ***
+**placeDesign ... cpu = 0: 0: 1, real = 0: 0: 1, mem = 1516.6M **
+Tdgp not successfully inited but do clear! skip clearing
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPEXT-3493          1  The design extraction status has been re...
+WARNING   IMPDC-1629           2  The default delay limit was set to %d. T...
+WARNING   IMPSP-9025           1  No scan chain specified/traced.          
+WARNING   IMPSP-9042           1  Scan chains were not defined, -place_glo...
+*** Message Summary: 5 warning(s), 0 error(s)
+
+<CMD> setPlaceMode -fp false
+<CMD> place_design
+*** Starting placeDesign default flow ***
+*** Start deleteBufferTree ***
+Info: Detect buffers to remove automatically.
+Analyzing netlist ...
+Updating netlist
+
+*summary: 0 instances (buffers/inverters) removed
+*** Finish deleteBufferTree (0:00:00.0) ***
+**INFO: Enable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+**INFO: Analyzing IO path groups for slack adjustment
+Effort level <high> specified for reg2reg_tmp.27127 path_group
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: counter
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (1 T). (MEM=1524.35)
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Total number of fetched objects 27
+End delay calculation. (MEM=1575.55 CPU=0:00:00.0 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1575.55 CPU=0:00:00.1 REAL=0:00:00.0)
+**INFO: Disable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+**INFO: Pre-place timing setting for timing analysis already disabled
+Deleted 0 physical inst  (cell - / prefix -).
+INFO: #ExclusiveGroups=0
+INFO: There are no Exclusive Groups.
+*** Starting "NanoPlace(TM) placement v#2 (mem=1566.0M)" ...
+*** Build Buffered Sizing Timing Model
+(cpu=0:00:00.8 mem=1566.0M) ***
+*** Build Virtual Sizing Timing Model
+(cpu=0:00:00.9 mem=1566.0M) ***
+No user-set net weight.
+Net fanout histogram:
+2		: 11 (40.7%) nets
+3		: 3 (11.1%) nets
+4     -	14	: 13 (48.1%) nets
+15    -	39	: 0 (0.0%) nets
+40    -	79	: 0 (0.0%) nets
+80    -	159	: 0 (0.0%) nets
+160   -	319	: 0 (0.0%) nets
+320   -	639	: 0 (0.0%) nets
+640   -	1279	: 0 (0.0%) nets
+1280  -	2559	: 0 (0.0%) nets
+2560  -	5119	: 0 (0.0%) nets
+5120+		: 0 (0.0%) nets
+Options: timingDriven clkGateAware ignoreScan pinGuide congEffort=high gpeffort=medium 
+**WARN: (IMPSP-9042):	Scan chains were not defined, -place_global_ignore_scan option will be ignored.
+Define the scan chains before using this option.
+Type 'man IMPSP-9042' for more detail.
+#std cell=24 (0 fixed + 24 movable) #buf cell=0 #inv cell=1 #block=0 (0 floating + 0 preplaced)
+#ioInst=0 #net=27 #term=97 #term/net=3.59, #fixedIo=0, #floatIo=0, #fixedPin=0, #floatPin=10
+stdCell: 24 single + 0 double + 0 multi
+Total standard cell length = 0.0460 (mm), area = 0.0001 (mm^2)
+Average module density = 0.747.
+Density for the design = 0.747.
+       = stdcell_area 230 sites (79 um^2) / alloc_area 308 sites (105 um^2).
+Pin Density = 0.3079.
+            = total # of pins 97 / total area 315.
+=== lastAutoLevel = 4 
+Clock gating cells determined by native netlist tracing.
+Iteration  1: Total net bbox = 1.747e+02 (8.08e+01 9.39e+01)
+              Est.  stn bbox = 1.912e+02 (9.02e+01 1.01e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1566.6M
+Iteration  2: Total net bbox = 1.747e+02 (8.08e+01 9.39e+01)
+              Est.  stn bbox = 1.912e+02 (9.02e+01 1.01e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1566.6M
+Iteration  3: Total net bbox = 1.486e+02 (6.07e+01 8.79e+01)
+              Est.  stn bbox = 1.655e+02 (7.06e+01 9.49e+01)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1568.0M
+Active setup views:
+    setup
+Iteration  4: Total net bbox = 1.704e+02 (6.42e+01 1.06e+02)
+              Est.  stn bbox = 1.909e+02 (7.50e+01 1.16e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1568.0M
+Iteration  5: Total net bbox = 1.969e+02 (8.09e+01 1.16e+02)
+              Est.  stn bbox = 2.180e+02 (9.27e+01 1.25e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1568.0M
+Iteration  6: Total net bbox = 2.084e+02 (9.26e+01 1.16e+02)
+              Est.  stn bbox = 2.295e+02 (1.04e+02 1.25e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1568.0M
+*** cost = 2.084e+02 (9.26e+01 1.16e+02) (cpu for global=0:00:00.0) real=0:00:00.0***
+Info: 0 clock gating cells identified, 0 (on average) moved 0/1
+Solver runtime cpu: 0:00:00.0 real: 0:00:00.0
+Core Placement runtime cpu: 0:00:00.0 real: 0:00:00.0
+**WARN: (IMPSP-9025):	No scan chain specified/traced.
+Type 'man IMPSP-9025' for more detail.
+*** Starting refinePlace (1:01:42 mem=1568.0M) ***
+Total net bbox length = 2.084e+02 (9.258e+01 1.158e+02) (ext = 7.228e+01)
+Move report: Detail placement moves 24 insts, mean move: 0.75 um, max move: 1.18 um 
+	Max move on inst (g272__6783): (9.01, 7.98) --> (8.40, 8.55)
+	Runtime: CPU: 0:00:00.0 REAL: 0:00:00.0 MEM: 1568.0MB
+Summary Report:
+Instances move: 24 (out of 24 movable)
+Instances flipped: 0
+Mean displacement: 0.75 um
+Max displacement: 1.18 um (Instance: g272__6783) (9.009, 7.9795) -> (8.4, 8.55)
+	Length: 6 sites, height: 1 rows, site name: CoreSite, cell type: OA21X1
+Total net bbox length = 2.179e+02 (9.034e+01 1.276e+02) (ext = 7.099e+01)
+Runtime: CPU: 0:00:00.0 REAL: 0:00:00.0 MEM: 1568.0MB
+*** Finished refinePlace (1:01:42 mem=1568.0M) ***
+*** End of Placement (cpu=0:00:01.1, real=0:00:01.0, mem=1568.0M) ***
+default core: bins with density > 0.750 =  0.00 % ( 0 / 1 )
+Density distribution unevenness ratio = 0.000%
+*** Free Virtual Timing Model ...(mem=1568.0M)
+**INFO: Enable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+**INFO: Analyzing IO path groups for slack adjustment
+Effort level <high> specified for reg2reg_tmp.27127 path_group
+AAE_INFO: opIsDesignInPostRouteState() is 0
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: counter
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (1 T). (MEM=1556.5)
+Total number of fetched objects 27
+End delay calculation. (MEM=1583.7 CPU=0:00:00.0 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1583.7 CPU=0:00:00.0 REAL=0:00:00.0)
+**INFO: Disable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Info: Disable timing driven in postCTS congRepair.
+
+Starting congRepair ...
+[NR-eGR] Track table information for default rule: 
+[NR-eGR] Metal1 has no routable track
+[NR-eGR] Metal2 has single uniform track structure
+[NR-eGR] Metal3 has single uniform track structure
+[NR-eGR] Metal4 has single uniform track structure
+[NR-eGR] Metal5 has single uniform track structure
+[NR-eGR] Metal6 has single uniform track structure
+[NR-eGR] Metal7 has single uniform track structure
+[NR-eGR] Metal8 has single uniform track structure
+[NR-eGR] Metal9 has single uniform track structure
+[NR-eGR] Metal10 has single uniform track structure
+[NR-eGR] Metal11 has single uniform track structure
+[NR-eGR] Read 452 PG shapes
+[NR-eGR] Read 0 clock shapes
+[NR-eGR] Read 0 other shapes
+[NR-eGR] #Routing Blockages  : 0
+[NR-eGR] #Instance Blockages : 0
+[NR-eGR] #PG Blockages       : 452
+[NR-eGR] #Halo Blockages     : 0
+[NR-eGR] #Boundary Blockages : 0
+[NR-eGR] #Clock Blockages    : 0
+[NR-eGR] #Other Blockages    : 0
+[NR-eGR] Num Prerouted Nets = 0  Num Prerouted Wires = 0
+[NR-eGR] Read 27 nets ( ignored 0 )
+[NR-eGR] There are 1 clock nets ( 0 with NDR ).
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id: 0  Nets: 27
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 27 net(s) in layer range [2, 11]
+[NR-eGR] Early Global Route overflow of layer group 1: 0.00% H + 0.00% V. EstWL: 2.205900e+02um
+[NR-eGR] Congestion Analysis By layer: (blocked Gcells are excluded) 
+[NR-eGR]                        OverCon            
+[NR-eGR]                         #Gcell     %Gcell
+[NR-eGR]        Layer             (1-0)    OverCon
+[NR-eGR] ----------------------------------------------
+[NR-eGR]  Metal1 ( 1)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal2 ( 2)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal3 ( 3)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal4 ( 4)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal5 ( 5)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal6 ( 6)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal7 ( 7)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal8 ( 8)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]  Metal9 ( 9)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal10 (10)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] Metal11 (11)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] ----------------------------------------------
+[NR-eGR]        Total         0( 0.00%)   ( 0.00%) 
+[NR-eGR] 
+[NR-eGR] Overflow after Early Global Route 0.00% H + 0.00% V
+Early Global Route congestion estimation runtime: 0.01 seconds, mem = 1582.2M
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+Skipped repairing congestion.
+[NR-eGR]                  Length (um)  Vias 
+[NR-eGR] -----------------------------------
+[NR-eGR]  Metal1   (1H)             0    97 
+[NR-eGR]  Metal2   (2V)           146   157 
+[NR-eGR]  Metal3   (3H)           118     2 
+[NR-eGR]  Metal4   (4V)             4     0 
+[NR-eGR]  Metal5   (5H)             0     0 
+[NR-eGR]  Metal6   (6V)             0     0 
+[NR-eGR]  Metal7   (7H)             0     0 
+[NR-eGR]  Metal8   (8V)             0     0 
+[NR-eGR]  Metal9   (9H)             0     0 
+[NR-eGR]  Metal10  (10V)            0     0 
+[NR-eGR]  Metal11  (11H)            0     0 
+[NR-eGR] -----------------------------------
+[NR-eGR]           Total          268   256 
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total half perimeter of net bounding box: 218um
+[NR-eGR] Total length: 268um, number of vias: 256
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total eGR-routed clock nets wire length: 28um, number of vias: 26
+[NR-eGR] --------------------------------------------------------------------------
+Early Global Route wiring runtime: 0.00 seconds, mem = 1528.2M
+Tdgp not successfully inited but do clear! skip clearing
+End of congRepair (cpu=0:00:00.0, real=0:00:00.0)
+*** Finishing placeDesign default flow ***
+**placeDesign ... cpu = 0: 0: 1, real = 0: 0: 1, mem = 1528.2M **
+Tdgp not successfully inited but do clear! skip clearing
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPDC-1629           2  The default delay limit was set to %d. T...
+WARNING   IMPSP-9025           1  No scan chain specified/traced.          
+WARNING   IMPSP-9042           1  Scan chains were not defined, -place_glo...
+*** Message Summary: 4 warning(s), 0 error(s)
+
+<CMD> get_verify_drc_mode -disable_rules -quiet
+<CMD> get_verify_drc_mode -quiet -area
+<CMD> get_verify_drc_mode -quiet -layer_range
+<CMD> get_verify_drc_mode -check_ndr_spacing -quiet
+<CMD> get_verify_drc_mode -check_only -quiet
+<CMD> get_verify_drc_mode -check_same_via_cell -quiet
+<CMD> get_verify_drc_mode -exclude_pg_net -quiet
+<CMD> get_verify_drc_mode -ignore_trial_route -quiet
+<CMD> get_verify_drc_mode -max_wrong_way_halo -quiet
+<CMD> get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+<CMD> get_verify_drc_mode -limit -quiet
+<CMD> set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report counter.drc.rpt -limit 1000
+<CMD> verify_drc
+#-check_ndr_spacing auto                 # enums={true false auto}, default=auto,  user setting
+#-check_same_via_cell true               # bool, default=false, user setting
+#-report counter.drc.rpt                 # string, default="", user setting
+ *** Starting Verify DRC (MEM: 1532.9) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+
+  Verification Complete : 208 Viols.
+
+ Violation Summary By Layer and Type:
+
+	         MetSpc    Short      Mar outOfDie   EOLSpc   CShort   Totals
+	Metal1       34       11        0       10        8        0       63
+	Metal2       27       23       38       10       10        0      108
+	Via2          0        0        0        0        0        8        8
+	Metal3       14       14        0        0        0        0       28
+	Metal4        0        1        0        0        0        0        1
+	Totals       75       49       38       20       18        8      208
+
+ *** End Verify DRC (CPU: 0:00:00.0  ELAPSED TIME: 0.00  MEM: 0.0M) ***
+
+<CMD> set_verify_drc_mode -area {0 0 0 0}
+<CMD> set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report counter.drc.rpt -limit 1000
+<CMD> verify_drc
+#-check_ndr_spacing auto                 # enums={true false auto}, default=auto,  user setting
+#-check_same_via_cell true               # bool, default=false, user setting
+#-report counter.drc.rpt                 # string, default="", user setting
+ *** Starting Verify DRC (MEM: 1532.9) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+
+  Verification Complete : 208 Viols.
+
+ Violation Summary By Layer and Type:
+
+	         MetSpc    Short      Mar outOfDie   EOLSpc   CShort   Totals
+	Metal1       34       11        0       10        8        0       63
+	Metal2       27       23       38       10       10        0      108
+	Via2          0        0        0        0        0        8        8
+	Metal3       14       14        0        0        0        0       28
+	Metal4        0        1        0        0        0        0        1
+	Totals       75       49       38       20       18        8      208
+
+ *** End Verify DRC (CPU: 0:00:00.0  ELAPSED TIME: 0.00  MEM: 0.0M) ***
+
+<CMD> set_verify_drc_mode -area {0 0 0 0}
+<CMD> encMessage warning 0
+Suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+<CMD> is_common_ui_mode
+<CMD> restoreDesign /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_placement.dat counter
+#% Begin load design ... (date=08/19 03:20:19, mem=1253.2M)
+
+
+ERROR: **ERROR: (IMPIMEX-7031):	restoreDesign more than once in the same Innovus session is dangerous and not recommended. Some internal state of applications or global settings cannot be reset, so it's not reliable enough in real flow. If you are just experimenting and/or debugging and accept the risks, you can set the global restore_db_stop_at_design_in_memory to 0 and try again.
+
+
+**ERROR: (IMPIMEX-7031):	restoreDesign more than once in the same Innovus session is dangerous and not recommended. Some internal state of applications or global settings cannot be reset, so it's not reliable enough in real flow. If you are just experimenting and/or debugging and accept the risks, you can set the global restore_db_stop_at_design_in_memory to 0 and try again.
+
+    while executing
+"error $catchMsg"
+    (procedure "restoreDesign" line 33)
+
+**ERROR: (IMPSYT-6300):	Failed to execute command 'source'. For more details, refer to error message: **ERROR: (IMPIMEX-7031):	restoreDesign more than once in the same Innovus session is dangerous and not recommended. Some internal state of applications or global settings cannot be reset, so it's not reliable enough in real flow. If you are just experimenting and/or debugging and accept the risks, you can set the global restore_db_stop_at_design_in_memory to 0 and try again.
+
+<CMD> encMessage warning 1
+Un-suppress "**WARN ..." messages.
+<CMD> encMessage debug 0

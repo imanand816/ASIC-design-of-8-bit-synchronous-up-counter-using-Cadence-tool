@@ -1,0 +1,331 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.10-p004_1, built Tue May 18 11:58:29 PDT 2021
+Options:	
+Date:		Sun Aug 20 21:29:35 2023
+Host:		vlsicadclient13 (x86_64 w/Linux 3.10.0-957.el7.x86_64) (8cores*8cpus*Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz 12288KB)
+OS:		Red Hat Enterprise Linux Workstation release 7.6 (Maipo)
+
+License:
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (15 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+[INFO] Loading PVS 21.12 fill procedures
+<CMD> win
+<CMD> encMessage warning 0
+Suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+<CMD> is_common_ui_mode
+<CMD> restoreDesign /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat counter
+#% Begin load design ... (date=08/20 21:31:28, mem=647.7M)
+Set Default Input Pin Transition as 0.1 ps.
+Loading design 'counter' saved by 'Innovus' '21.10-p004_1' on 'Sat Aug 19 05:48:30 2023'.
+% Begin Load MMMC data ... (date=08/20 21:31:28, mem=650.2M)
+% End Load MMMC data ... (date=08/20 21:31:28, total cpu=0:00:00.0, real=0:00:01.0, peak res=650.7M, current mem=650.7M)
+rc_corner
+
+Loading LEF file /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/libs/lef/gsclib045_tech.lef ...
+
+Loading LEF file /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/libs/lef/gsclib045_macro.lef ...
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+viaInitial starts at Sun Aug 20 21:31:29 2023
+viaInitial ends at Sun Aug 20 21:31:29 2023
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/viewDefinition.tcl
+Reading slow timing library '/home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/lib/slow_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/lib/slow_vdd1v0_basicCells.lib)
+Read 480 cells in library 'slow_vdd1v0' 
+Reading fast timing library '/home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/lib/fast_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/lib/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library 'fast_vdd1v0' 
+*** End library_loading (cpu=0.01min, real=0.00min, mem=14.9M, fe_cpu=0.65min, fe_real=1.90min, fe_mem=836.5M) ***
+% Begin Load netlist data ... (date=08/20 21:31:29, mem=668.8M)
+*** Begin netlist parsing (mem=836.5M) ***
+Created 480 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/counter.v.bin'
+
+*** Memory Usage v#1 (Current mem = 842.527M, initial mem = 308.848M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=842.5M) ***
+% End Load netlist data ... (date=08/20 21:31:29, total cpu=0:00:00.0, real=0:00:00.0, peak res=678.2M, current mem=678.2M)
+Top level cell is counter.
+Hooked 960 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell counter ...
+*** Netlist is unique.
+** info: there are 1055 modules.
+** info: there are 24 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 891.953M, initial mem = 308.848M) ***
+*info: set bottom ioPad orient R0
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+Set Shrink Factor to 0.90000
+Loading preference file /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/gui.pref.tcl ...
+#WARNING (NRIF-90) Option setNanoRouteMode -routeBottomRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -bottomRoutingLayer instead.
+#WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+AAE_INFO: switching -siAware from false to true ...
+AAE_INFO: The setting is changed from false to true in setDelayCalMode -SIAware
+addRing command will ignore shorts while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will consider rows while creating rings.
+The ring targets are set to core/block ring wires.
+addStripe will allow jog to connect padcore ring and block ring.
+
+Stripes will not extend to closest target.
+When breaking rings, the power planner will consider the existence of blocks.
+addStripe will break automatically at non-default domains when generating global stripes over the core area or default domain.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+Stripes will not be created over regions without power planning wires.
+Offset for stripe breaking is set to 0.
+Stripes will stop at the boundary of the specified area.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Change floorplan default-technical-site to 'CoreSite'.
+*Info: initialize multi-corner CTS.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+Reading floorplan file - /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/counter.fp.gz (mem = 1133.3M).
+% Begin Load floorplan data ... (date=08/20 21:31:30, mem=955.2M)
+*info: reset 29 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 51600 34200)
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+ ... processed partition successfully.
+Reading binary special route file /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/counter.fp.spr.gz (Created by Innovus v21.10-p004_1 on Sat Aug 19 05:48:30 2023, version: 1)
+Convert 0 swires and 0 svias from compressed groups
+27 swires and 196 svias were compressed
+27 swires and 196 svias were decompressed from small or sparse groups
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=956.0M, current mem=956.0M)
+There are 1 nets with weight being set
+There are 1 nets with bottomPreferredRoutingLayer being set
+There are 1 nets with avoidDetour being set
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=08/20 21:31:31, total cpu=0:00:00.0, real=0:00:01.0, peak res=956.9M, current mem=956.8M)
+Reading congestion map file /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/counter.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=08/20 21:31:31, mem=957.0M)
+Un-suppress "**WARN ..." messages.
+% End Load SymbolTable ... (date=08/20 21:31:31, total cpu=0:00:00.0, real=0:00:00.0, peak res=957.3M, current mem=957.3M)
+Loading place ...
+% Begin Load placement data ... (date=08/20 21:31:31, mem=957.3M)
+Reading placement file - /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/counter.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v21.10-p004_1 on Sat Aug 19 05:48:30 2023, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Completed restorePlace (cpu=0:00:00.0 real=0:00:00.0 mem=1135.3M) ***
+Total net length = 2.064e+02 (1.003e+02 1.061e+02) (ext = 1.449e+02)
+% End Load placement data ... (date=08/20 21:31:31, total cpu=0:00:00.0, real=0:00:00.0, peak res=958.3M, current mem=958.3M)
+Reading PG file /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/counter.pg.gz, version#2, (Created by Innovus v21.10-p004_1 on       Sat Aug 19 05:48:30 2023)
+*** Completed restorePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=1132.3M) ***
+% Begin Load routing data ... (date=08/20 21:31:31, mem=958.4M)
+Reading routing file - /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/counter.route.gz.
+Reading Innovus routing data (Created by Innovus v21.10-p004_1 on Sat Aug 19 05:48:30 2023 Format: 20.1) ...
+*** Total 29 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1132.3M) ***
+% End Load routing data ... (date=08/20 21:31:31, total cpu=0:00:00.0, real=0:00:00.0, peak res=959.7M, current mem=958.7M)
+TAT_INFO: restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+Reading property file /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/counter.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1135.3M) ***
+Reading dirtyarea snapshot file /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/counter.db.da.gz (Create by Innovus v21.10-p004_1 on Sat Aug 19 05:48:30 2023, version: 4).
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File /home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+Cap table was created using Encounter 10.10-b056_1.
+Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+Set Shrink Factor to 0.90000
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup
+    RC-Corner Name        : rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner Technology file: '/home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/libs/mmmc/rc_corner/gpdk045.tch'
+ 
+ Analysis View: hold
+    RC-Corner Name        : rc_corner
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner Technology file: '/home/arshkedia/Documents/Anand_counter/Cadence_design_database_45nm/physical_design/counter_final_gds_done.dat/libs/mmmc/rc_corner/gpdk045.tch'
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Via generation completed.
+% Begin Load power constraints ... (date=08/20 21:31:32, mem=968.4M)
+'set_default_switching_activity' finished successfully.
+% End Load power constraints ... (date=08/20 21:31:32, total cpu=0:00:00.0, real=0:00:00.0, peak res=974.9M, current mem=974.9M)
+slow_delay fast_delay
+% Begin load AAE data ... (date=08/20 21:31:32, mem=995.2M)
+AAE DB initialization (MEM=1187.02 CPU=0:00:00.0 REAL=0:00:00.0) 
+% End load AAE data ... (date=08/20 21:31:32, total cpu=0:00:00.4, real=0:00:00.0, peak res=1000.8M, current mem=1000.8M)
+Restoring CCOpt config...
+  Extracting original clock gating for clk...
+    clock_tree clk contains 8 sinks and 0 clock gates.
+  Extracting original clock gating for clk done.
+  The skew group clk/sdc was created. It contains 8 sinks and 1 sources.
+  The skew group clk/sdc was created. It contains 8 sinks and 1 sources.
+Restoring CCOpt config done.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+#% End load design ... (date=08/20 21:31:32, total cpu=0:00:02.7, real=0:00:04.0, peak res=1025.7M, current mem=1003.9M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+*** Message Summary: 8 warning(s), 0 error(s)
+
+<CMD> setDrawView fplan
+<CMD> encMessage warning 1
+<CMD> encMessage debug 0
+<CMD> setDrawView place
+<CMD> getMultiCpuUsage -localCpu
+<CMD> get_verify_drc_mode -disable_rules -quiet
+<CMD> get_verify_drc_mode -quiet -area
+<CMD> get_verify_drc_mode -quiet -layer_range
+<CMD> get_verify_drc_mode -check_ndr_spacing -quiet
+<CMD> get_verify_drc_mode -check_only -quiet
+<CMD> get_verify_drc_mode -check_same_via_cell -quiet
+<CMD> get_verify_drc_mode -exclude_pg_net -quiet
+<CMD> get_verify_drc_mode -ignore_trial_route -quiet
+<CMD> get_verify_drc_mode -max_wrong_way_halo -quiet
+<CMD> get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+<CMD> get_verify_drc_mode -limit -quiet
+<CMD> set_verify_drc_mode -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report counter.drc.rpt -limit 1000
+<CMD> verify_drc
+#-check_ndr_spacing auto                 # enums={true false auto}, default=auto,  user setting
+#-check_same_via_cell true               # bool, default=false, user setting
+#-report counter.drc.rpt                 # string, default="", user setting
+ *** Starting Verify DRC (MEM: 1198.3) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+
+  Verification Complete : 0 Viols.
+
+ *** End Verify DRC (CPU: 0:00:00.0  ELAPSED TIME: 0.00  MEM: 5.0M) ***
+
+<CMD> set_verify_drc_mode -area {0 0 0 0}
+<CMD> verifyConnectivity -type all -error 1000 -warning 50
+VERIFY_CONNECTIVITY use new engine.
+
+******** Start: VERIFY CONNECTIVITY ********
+Start Time: Sun Aug 20 21:33:56 2023
+
+Design Name: counter
+Database Units: 2000
+Design Boundary: (0.0000, 0.0000) (25.8000, 17.1000)
+Error Limit = 1000; Warning Limit = 50
+Check all nets
+
+Begin Summary 
+  Found no problems or warnings.
+End Summary
+
+End Time: Sun Aug 20 21:33:56 2023
+Time Elapsed: 0:00:00.0
+
+******** End: VERIFY CONNECTIVITY ********
+  Verification Complete : 0 Viols.  0 Wrngs.
+  (CPU Time: 0:00:00.0  MEM: 0.000M)
+
+<CMD> fit
+<CMD> setDrawView fplan
+<CMD> setDrawView ameba
+<CMD> setDrawView place
